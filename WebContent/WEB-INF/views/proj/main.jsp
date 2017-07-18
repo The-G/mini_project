@@ -38,7 +38,7 @@
 				<a href="login">로그인</a>
 			</div>
 			<div class="col-md-4">
-				<a href="mypage">마이페이지</a>
+				<a href="mypage">mypage</a>
 			</div>
 		</div>
 		<div class="row">
