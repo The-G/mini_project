@@ -35,7 +35,7 @@
 				<a href="sign_up">회원가입 하기</a>
 			</div>
 			<div class="col-md-4">
-				<a href="login">로그인</a>
+				<a href="login">login</a>
 			</div>
 			<div class="col-md-4">
 				<a href="mypage">mypage</a>
