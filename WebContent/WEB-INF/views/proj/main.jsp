@@ -1,60 +1,96 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta charset=UTF-8">
-<title>Insert title here</title>
-<link rel="shortcut icon" href="/favicon.ico" />
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>mini_project</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<!-- Bootstrap Core CSS -->
+<link
+	href="<c:url value="../resource/vendor/bootstrap/css/bootstrap.min.css" />"
+	rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../resource/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href='../resource/https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+	rel='stylesheet' type='text/css'>
+<link
+	href='../resource/https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+	rel='stylesheet' type='text/css'>
+
+<!-- Plugin CSS -->
+<link href="../resource/vendor/magnific-popup/magnific-popup.css"
+	rel="stylesheet">
+
+<!-- Theme CSS -->
+<link href="../resource/css/creative.min.css" rel="stylesheet">
+
+
 </head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<a href="sign_up">회원가입 하기</a>
+<body id="page-top">
+
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i
+						class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top">Start
+					Bootstrap</a>
 			</div>
-			<div class="col-md-4">
-				<a href="login">login</a>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="testAction">test</a></li>
+					<li><a href="sign_up">회원가입</a></li>
+					<li><a href="login">로그인</a></li>
+					<li><a href="mypage">마이 페이지</a></li>
+				</ul>
 			</div>
-			<div class="col-md-4">
-				<a href="mypage">mypage</a>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<header>
+		<div class="header-content">
+			<div class="header-content-inner">
+				<h1 id="homeHeading">To see oR Not</h1>
+				<br>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: red">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: blue">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: red">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: blue">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: red">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: blue">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: red">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: blue">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: red">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: blue">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: red">.col-md-1</div>
-			<div class="col-md-1 col-sm-3 col-xs-6" style="background-color: blue">.col-md-1</div>
+	</header>
+
+	<section class="bg-primary" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 text-center">
+					<h2 class="section-heading">We've got what you need!</h2>
+					<hr class="light">
+					<p class="text-faded">You know, there are so many movies that
+						are being released. but... I mean. It is very hard to choise
+						movie. We will help you make a decision where you go to theater or
+						at your'home</p>
+					<a href="login.jsp"
+						class="page-scroll btn btn-default btn-xl sr-button">After
+						logging Get Started!</a>
+				</div>
+			</div>
 		</div>
-	</div>
+	</section>
+
+
+
 </body>
 </html>

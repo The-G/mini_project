@@ -8,9 +8,6 @@
 <link rel="shortcut icon" href="/favicon.ico" />
 </head>
 <body>
-	<script type="text/javascript">
-		alert('${msg}');
-		location.href = '${url}';
-	</script>
+test
 </body>
 </html>
