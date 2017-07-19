@@ -31,6 +31,9 @@
 <body>
 	<div class="container">
 		<div class="row">
+			<div class="col-md-12" align="center">
+				<a href="testAction"><h1>test</h1></a>
+			</div>
 			<div class="col-md-4">
 				<a href="sign_up">회원가입 하기</a>
 			</div>
