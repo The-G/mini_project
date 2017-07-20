@@ -44,7 +44,7 @@
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand page-scroll" href="#page-top">Start
+				<a class="navbar-brand page-scroll" href="main">Start
 					Bootstrap</a>
 			</div>
 
@@ -71,7 +71,8 @@
 			
 			
 			
-				<h1 id="homeHeading"><marquee scrollamount="10"><img src="../resource/img/portfolio/letter/title.png"></marquee></h1>
+				<h1 id="homeHeading"><img src="../resource/img/portfolio/letter/title.png"></h1>
+				<input type="text"  name="moive" style="color: grey" value ="영화이름입력"> <input type="button" value="검색">
 
 				<br>
 			</div>
@@ -99,4 +100,9 @@
 
 
 </body>
+
+
+
+
+
 </html>
