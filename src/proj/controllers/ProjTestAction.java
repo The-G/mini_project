@@ -29,7 +29,7 @@ public class ProjTestAction extends AbstractController {
 		ModelAndView mav = new ModelAndView("/WEB-INF/views/result.jsp");
 		try {
 			
-//			Crawling_movie_comments();
+			Crawling_movie_comments();
 			Make_wordcloud();
 //			movieDAO.deleteArticle(movieVO);
 			mav.addObject("msg", "크롤링 / wordcloud 성공");
@@ -91,8 +91,6 @@ public class ProjTestAction extends AbstractController {
 		f0.close();
 		f1.close();
 		
-		Make_wordcloud();
-		//// Crawling END	
 	}
 	
 	//// START wordcloud...  이거 작동 안한다 내일 질문!!!
@@ -100,8 +98,8 @@ public class ProjTestAction extends AbstractController {
 		try{
             RCaller caller = new RCaller();
 			caller.setRscriptExecutable("C:/Program Files/R/R-3.3.2/bin/x64/Rscript.exe");
-			caller.addRCode("source(\"movie.R\")");
-            caller.runOnly();
+			caller.addRCode("source(\"C:/dev/workspace/mini_project/movie_t.R\")");
+			caller.runOnly();
             System.out.println("완료");
         }catch (Exception e){
             e.printStackTrace();
