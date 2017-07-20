@@ -6,8 +6,13 @@
 <meta charset=UTF-8">
 <title>Insert title here</title>
 <link rel="shortcut icon" href="/favicon.ico" />
+
 </head>
 <body>
 test
+<img alt="result" src="../movie.png">
+
+
+
 </body>
 </html>

@@ -18,7 +18,7 @@ wordcount <- table(rev)
 head(sort(wordcount, decreasing=T),30)
 library(RColorBrewer) 
 palete <- brewer.pal(9,"Set1") 
-png("movie.png")
+png("C:/dev/workspace/mini_project/WebContent/movie.png")
 
 wordcloud(names(wordcount),freq=wordcount,scale=c(5,1),rot.per=0.25,min.freq=1,
 random.order=F,random.color=T,colors=palete)

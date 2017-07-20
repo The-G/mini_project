@@ -29,7 +29,7 @@ public class ProjTestAction extends AbstractController {
 		ModelAndView mav = new ModelAndView("/WEB-INF/views/result.jsp");
 		try {
 			
-			Crawling_movie_comments();
+//			Crawling_movie_comments();
 			Make_wordcloud();
 //			movieDAO.deleteArticle(movieVO);
 			mav.addObject("msg", "크롤링 / wordcloud 성공");
