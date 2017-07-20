@@ -29,7 +29,7 @@
 	rel="stylesheet">
 
 <!-- Theme CSS -->
-<link href="../resource/css/creative.min.css" rel="stylesheet">
+<link href="../resource/css/creative.css" rel="stylesheet">
 
 
 </head>
@@ -66,7 +66,13 @@
 	<header>
 		<div class="header-content">
 			<div class="header-content-inner">
-				<h1 id="homeHeading">To see oR Not</h1>
+			
+			
+			
+			
+			
+				<h1 id="homeHeading"><marquee scrollamount="10"><img src="../resource/img/portfolio/letter/title.png"></marquee></h1>
+
 				<br>
 			</div>
 		</div>
