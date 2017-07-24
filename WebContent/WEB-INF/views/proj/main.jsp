@@ -53,7 +53,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="testAction">test</a></li>
-					<li><a href="sign_up">회원가입</a></li>
+					
 					<li><a href="login">로그인</a></li>
 					<li><a href="mypage">마이 페이지</a></li>
 				</ul>
@@ -66,36 +66,25 @@
 	<header>
 		<div class="header-content">
 			<div class="header-content-inner">
-				<form action="searchAction" method="post">
-					<h1 id="homeHeading"><img src="../resource/img/portfolio/letter/title.png"></h1>
-					<input type="text"  name="movie_name" style="color:black" placeholder ="영화이름입력" required="required"/> 
-					<input type="submit" style="color:black" value="검색" >
-				</form>
+
+
 				<br>
-			</div>
-		</div>
-	</header>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 
-	<section class="bg-primary" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 text-center">
-					<h2 class="section-heading">We've got what you need!</h2>
-					<hr class="light">
-					<p class="text-faded">You know, there are so many movies that
-						are being released. but... I mean. It is very hard to choise
-						movie. We will help you make a decision where you go to theater or
-						at your'home</p>
-					<a href="login.jsp"
-						class="page-scroll btn btn-default btn-xl sr-button">After
-						logging Get Started!</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
+				<form action="searchAction" method="post">
+					<input type="text" name="moive_name" style="color: black" placeholder="영화이름입력" required="required">
+					<b> <input type="submit" color="color:black" value="검색"
+						style="width: 75; font-family: 돋움; background-color: #eff7f9; 
+						color: #000000; border: 1 solid #A0DBE4"></b>
+				</form>
 </body>
 
 
