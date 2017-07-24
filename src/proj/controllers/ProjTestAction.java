@@ -23,7 +23,7 @@ public class ProjTestAction extends AbstractController {
 //		Long no = Long.parseLong(request.getParameter("no"));
 //		String pwd = request.getParameter("pwd"); //page 값을 여기서 받아서!!
 		
-		MovieVO movieVO = new MovieVO();
+//		MovieVO movieVO = new MovieVO(); // 이거는 admin이 수행하지.. 영화 정보 긁기
 		MovieCommentVO movieCommentVO = new MovieCommentVO();
 //		movieVO.setNo(no);
 //		movieVO.setPwd(pwd);

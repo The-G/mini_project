@@ -66,14 +66,11 @@
 	<header>
 		<div class="header-content">
 			<div class="header-content-inner">
-			
-			
-			
-			
-			
-				<h1 id="homeHeading"><img src="../resource/img/portfolio/letter/title.png"></h1>
-				<input type="text"  name="moive" style="color: grey" value ="영화이름입력"> <input type="button" value="검색">
-
+				<form action="searchAction" method="post">
+					<h1 id="homeHeading"><img src="../resource/img/portfolio/letter/title.png"></h1>
+					<input type="text"  name="movie_name" style="color:black" placeholder ="영화이름입력" required="required"/> 
+					<input type="submit" style="color:black" value="검색" >
+				</form>
 				<br>
 			</div>
 		</div>

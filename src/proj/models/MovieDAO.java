@@ -1,5 +1,8 @@
 package proj.models;
 
+import java.util.List;
+
+import org.jsoup.nodes.Element;
 
 public interface MovieDAO {
 
@@ -8,4 +11,7 @@ public interface MovieDAO {
 	void crawlingMovieComment(MovieCommentVO movieCommentVO) throws Exception;
 
 	void make_wordcloud(MovieCommentVO movieCommentVO) throws Exception;
+
+	List<MovieVO> getMovieList(MovieVO movieVO);
+
 }
