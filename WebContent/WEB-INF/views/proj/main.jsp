@@ -29,7 +29,7 @@
 	rel="stylesheet">
 
 <!-- Theme CSS -->
-<link href="../resource/css/creative.min.css" rel="stylesheet">
+<link href="../resource/css/creative.css" rel="stylesheet">
 
 
 </head>
@@ -44,7 +44,7 @@
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand page-scroll" href="#page-top">Start
+				<a class="navbar-brand page-scroll" href="main">Start
 					Bootstrap</a>
 			</div>
 
@@ -66,7 +66,14 @@
 	<header>
 		<div class="header-content">
 			<div class="header-content-inner">
-				<h1 id="homeHeading">To see oR Not</h1>
+			
+			
+			
+			
+			
+				<h1 id="homeHeading"><img src="../resource/img/portfolio/letter/title.png"></h1>
+				<input type="text"  name="moive" style="color: grey" value ="영화이름입력"> <input type="button" value="검색">
+
 				<br>
 			</div>
 		</div>
@@ -93,4 +100,9 @@
 
 
 </body>
+
+
+
+
+
 </html>
