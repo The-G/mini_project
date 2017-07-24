@@ -44,18 +44,17 @@
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand page-scroll" href="main">Start
-					Bootstrap</a>
+				<a class="navbar-brand page-scroll" href="main"><font color="f2f516" >영화를 부탁해</font></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="testAction">test</a></li>
+					<li><a href="testAction"><font color="f2f516" >test</font></a></li>
 					
-					<li><a href="login">로그인</a></li>
-					<li><a href="mypage">마이 페이지</a></li>
+					<li><a href="login"><font color="f2f516" >로그인</font></a></li>
+					<li><a href="mypage"><font color="f2f516" >마이 페이지</font></a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -81,11 +80,12 @@
 				<br>
 				<br>
 				<br>
+				<br>
 				
 					
 				
 				
-				<input type="text"  name="moive" style="color: grey" value ="영화이름입력"> <b><input type="button" color ="red" value="검색"
+				<input type="text"  name="moive" style="color: grey" value ="관심영화검색하기"> <b><input type="button" color ="red" value="검색"
 				style="width:75; font-family:돋움; background-color:#eff7f9;color:#000000; border:1 solid #A0DBE4"></b>
 </body>
 
