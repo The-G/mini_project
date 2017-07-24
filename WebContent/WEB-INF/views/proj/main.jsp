@@ -71,34 +71,22 @@
 			
 			
 			
-				<h1 id="homeHeading"><img src="../resource/img/portfolio/letter/title.png"></h1>
-				<input type="text"  name="moive" style="color: grey" value ="영화이름입력"> <input type="button" value="검색">
-
 				<br>
-			</div>
-		</div>
-	</header>
-
-	<section class="bg-primary" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 text-center">
-					<h2 class="section-heading">We've got what you need!</h2>
-					<hr class="light">
-					<p class="text-faded">You know, there are so many movies that
-						are being released. but... I mean. It is very hard to choise
-						movie. We will help you make a decision where you go to theater or
-						at your'home</p>
-					<a href="login.jsp"
-						class="page-scroll btn btn-default btn-xl sr-button">After
-						logging Get Started!</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				
+					
+				
+				
+				<input type="text"  name="moive" style="color: grey" value ="영화이름입력"> <b><input type="button" color ="red" value="검색"
+				style="width:75; font-family:돋움; background-color:#eff7f9;color:#000000; border:1 solid #A0DBE4"></b>
 </body>
 
 
