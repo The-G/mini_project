@@ -53,7 +53,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="testAction">test</a></li>
-					<li><a href="sign_up">회원가입</a></li>
+					
 					<li><a href="login">로그인</a></li>
 					<li><a href="mypage">마이 페이지</a></li>
 				</ul>
