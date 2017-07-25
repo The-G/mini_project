@@ -15,7 +15,11 @@
 		<table>
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="userid" value="${userid}"></td>
+				<td><input type="text" name="userid" value="${userid}">
+				    <input type="checkbox" name="idsave" value="saveOk" onclick="sendit()">아이디 저장
+
+
+
 			</tr>
 			<tr>
 				<td>암호</td>
@@ -23,12 +27,10 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-				<input type="checkbox" id="idSaveCheck"/> 아이디 저장
-
-
-
 				  <input type="submit" value="로그인"
-					onclick="return loginCheck()">&nbsp;&nbsp; 
+					onclick="return loginCheck()">
+					
+					&nbsp;&nbsp; 
 				<input type="button" value="회원가입" onclick="location.href='join.do'"></td>
 			</tr>
 			<tr>

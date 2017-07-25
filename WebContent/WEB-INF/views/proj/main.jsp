@@ -52,7 +52,7 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="${context}/testAction"><font color="f2f516" >test</font></a></li>
+					<li><a href="testAction"><font color="f2f516" >test</font></a></li>
 					<c:if test="${empty loginUser}">
 					<li><a href="${context}/login.do"><font color="f2f516" >로그인</font></a></li>
 					</c:if>
@@ -90,7 +90,8 @@
 		<input type="text" name="movie_name" style="color: black"
 			placeholder="영화이름입력" required="required"> <b> <input
 			type="submit" color="color:black" value="검색"
-			style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"></b>
+			style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"
+			></b>
 	</form>
 
 </body>
