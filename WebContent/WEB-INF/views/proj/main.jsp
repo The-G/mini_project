@@ -52,7 +52,7 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="${context}/testAction"><font color="f2f516" >test</font></a></li>
+					<li><a href="testAction"><font color="f2f516" >test</font></a></li>
 					<c:if test="${empty loginUser}">
 					<li><a href="${context}/login.do"><font color="f2f516" >로그인</font></a></li>
 					</c:if>
