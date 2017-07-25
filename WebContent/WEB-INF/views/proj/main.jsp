@@ -45,20 +45,20 @@
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand page-scroll" href="/main">홈으로</a>
+				<a class="navbar-brand page-scroll" href="main"><font color="f2f516" >영화를 부탁해</font></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="${context}/testAction">test</a></li>
+					<li><a href="${context}/testAction"><font color="f2f516" >test</font></a></li>
 					<c:if test="${empty loginUser}">
-					<li><a href="${context}/login.do">로그인</a></li>
+					<li><a href="${context}/login.do"><font color="f2f516" >로그인</font></a></li>
 					</c:if>
 					<c:if test="${not empty loginUser}">
-					<li><a href="${context}/logout.do">로그아웃</a></li>
-					<li><a href="${context}/mypage.do">마이페이지</a></li>
+					<li><a href="${context}/logout.do"><font color="f2f516" >로그아웃</font></a></li>
+					<li><a href="${context}/mypage.do"><font color="f2f516" >마이페이지</font></a></li>
 					</c:if>
 				</ul>
 			</div>
@@ -70,34 +70,28 @@
 	<header>
 		<div class="header-content">
 			<div class="header-content-inner">
+		
 			
-				<h1 id="homeHeading"><img src="${context}/resource/img/portfolio/letter/title.png"></h1>
-				<input type="text"  name="moive" style="color: grey" value ="영화이름입력"> <input type="button" value="검색">
-
 				<br>
-			</div>
-		</div>
-	</header>
-
-	<section class="bg-primary" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 text-center">
-					<h2 class="section-heading">We've got what you need!</h2>
-					<hr class="light">
-					<p class="text-faded">You know, there are so many movies that
-						are being released. but... I mean. It is very hard to choise
-						movie. We will help you make a decision where you go to theater or
-						at your'home</p>
-					<a href="${context}login.jsp"
-						class="page-scroll btn btn-default btn-xl sr-button">After
-						logging Get Started!</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				
+			
+	<form action="searchAction" method="post">
+		<input type="text" name="movie_name" style="color: black"
+			placeholder="영화이름입력" required="required"> <b> <input
+			type="submit" color="color:black" value="검색"
+			style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"></b>
+	</form>
 
 </body>
 

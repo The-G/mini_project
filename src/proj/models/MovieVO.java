@@ -21,7 +21,10 @@ public class MovieVO {
 		return name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		if (name.equals("")) {
+			throw new RuntimeException();
+		}
+		this.name = name;			
 	}
 	public Date getRelease_date() {
 		return release_date;

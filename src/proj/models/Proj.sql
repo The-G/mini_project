@@ -71,7 +71,43 @@ ALTER TABLE movie_comment
 ;
 
 
-SELECT * FROM MOVIE order by name;
+SELECT * FROM MOVIE order by movie_id;
 
 INSERT INTO movie(movie_id, img_url, name, daum_info_link, release_date)
 VALUES(1, 'dfd', 'fdsa', 'fdsaf', to_date('2011/04/22 08:30:00', 'yyyy/mm/dd hh24:mi:ss'));
+
+SELECT * FROM MOVIE_COMMENT;
+
+--delete MOVIE_COMMENT
+--where movie_id = 2;
+
+INSERT INTO movie_comment(nickname, score, content, movie_id)
+VALUES('ttat', 4, 'fdasfdsa', 2);
+
+
+SELECT * FROM MOVIE;
+WHERE name =
+
+SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
+FROM MOVIE;
+WHERE name LIKE '%스파이더%';
+
+
+SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
+FROM   MOVIE
+WHERE name LIKE '%스파이더맨%';
+
+
+SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
+FROM   MOVIE
+WHERE name LIKE '%' || '스파이더맨' || '%';
+		
+-- Movie table
+--MOVIE_ID 
+--NAME
+--RELEASE_DATE
+--DIRECTOR 
+--CRAWLING_DAUM_ID 
+--IMG_URL
+--DAUM_INFO_LINK
+
