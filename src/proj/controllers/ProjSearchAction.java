@@ -15,7 +15,6 @@ public class ProjSearchAction extends AbstractController {
 	public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) {
 
 
-		
 		MovieDAO movieDAO = MovieDAOImpl.getInstance(); // DB단에 대한 비즈니스 로직 분리
 		
 		ModelAndView mav = new ModelAndView();

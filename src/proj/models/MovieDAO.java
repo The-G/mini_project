@@ -13,5 +13,7 @@ public interface MovieDAO {
 	void make_wordcloud(MovieCommentVO movieCommentVO) throws Exception;
 
 	List<MovieVO> getMovieList(MovieVO movieVO);
+	
+	List<MovieCommentVO> getMovieCommentList(MovieCommentVO movieCommentVO);
 
 }
