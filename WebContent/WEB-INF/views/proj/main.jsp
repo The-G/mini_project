@@ -54,6 +54,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 
+					<li><a href="drawplot"><font color="f2f516" >우창 페이지</font></a></li>
 					<li><a href="testAction"><font color="f2f516" >test</font></a></li>
 					<li><a href="login"><font color="f2f516" >로그인</font></a></li>
 					<li><a href="mypage"><font color="f2f516" >마이 페이지</font></a></li>
