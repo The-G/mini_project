@@ -17,9 +17,14 @@
 
 </head>
 <body>
+
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8"></div>
+			<!-- wordcloud -->
+			<div class="col-md-8">
+				${count_word}
+			</div>
+			<!-- some comments -->
 			<div class="col-md-4">
 				<table class="table">
 					<h1 class="text-center">영화 리스트</h1>

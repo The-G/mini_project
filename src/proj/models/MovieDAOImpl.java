@@ -8,7 +8,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+import java.util.Map.Entry;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -18,6 +22,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import proj.controllers.WordCount;
 import rcaller.RCaller;
 
 public class MovieDAOImpl implements MovieDAO {
@@ -273,5 +278,50 @@ public class MovieDAOImpl implements MovieDAO {
 		}
 		return list;
 	}
+
+    private ArrayList<WordCount> words;
+	@Override
+	public HashMap<String, Integer> countWord(List<MovieCommentVO> list) {
+//		받아온 list의 comment를 합치고, replace, split 하고 단어 count 후 list로 반환!!	
+//		System.out.println(list.get(0).getContent());
+		
+		String append_text = "";
+
+		// 바로 content 빼서 합치는 방법 있나??
+		for (int i=0;i < list.size();i++) {
+		  append_text = append_text.concat(list.get(i).getContent().toString());
+		  append_text = append_text.concat(list.get(i).getContent());
+		  append_text = append_text.concat(System.lineSeparator());
+		}
+		
+//		System.out.println(append_text);
+        HashMap<String, Integer> count = new HashMap<String, Integer>();
+        //TODO:: FIRST!!! json으로 hash 대신에... 해서 json 통으로 넘기자!!!
+        Scanner scan = new Scanner(append_text);
+
+        while (scan.hasNext()) {
+            String word = removePunctuations(scan.next());
+//            if (filter.contains(word)) continue;
+            if (word.equals("")) continue;
+            Integer n = count.get(word);
+            count.put(word, (n == null) ? 1 : n + 1);
+        }
+        System.out.println(count);
+//        PriorityQueue<WordCount> pq = new PriorityQueue<WordCount>();
+//        for (Entry<String, Integer> entry : count.entrySet()) {
+//            pq.add(new WordCount(entry.getKey(), entry.getValue()));
+//        }
+//        words = new ArrayList<WordCount>();
+//        while (!pq.isEmpty()) {
+//            WordCount wc = pq.poll();
+//            if (wc.word.length() > 1) words.add(wc);
+//        }
+//        System.out.println(words);
+		return count;
+		
+	}
+    private static String removePunctuations(String str) {
+        return str.replaceAll("\\p{Punct}|\\p{Digit}", "");
+    }
 
 }

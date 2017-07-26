@@ -85,3 +85,10 @@ select * from MOVIE_COMMENT;
 SELECT  nickname, score, content, movie_id
 FROM    MOVIE_COMMENT
 WHERE   movie_id = 127 and content is not null;
+
+select * from KEYWORD;
+
+INSERT INTO KEYWORD(keyword_ko, movie_id)
+values('킹왕짱',1);
+
+
