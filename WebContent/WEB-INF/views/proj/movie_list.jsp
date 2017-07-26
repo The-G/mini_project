@@ -23,21 +23,28 @@
 			<thead class="thead-inverse">
 				<tr>
 					<th>title</th>
-					<th>crawling_daum_id</th>
 					<th>img_url</th>
 					<th>개봉일</th>
+					<th>crawling_daum_id</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${list}" var="vo">
-					<tr>
-						<td>${vo.name}</td>
-						<td>${vo.crawling_daum_id}</td>
-						<td><img src="${vo.img_url}" /></td>
-						<td><fmt:formatDate value="${vo.release_date}" type="both"
-								dateStyle="short" timeStyle="short" /></td>
-					</tr>
-				</c:forEach>
+				<form action="searchAction" method="post">
+					<c:forEach items="${list}" var="vo">
+						<tr>
+							<td>${vo.name}</td>
+							<td><img src="${vo.img_url}" /></td>
+							<td><fmt:formatDate value="${vo.release_date}" type="both"
+									dateStyle="short" timeStyle="short" /></td>
+							<td>
+								<!-- TODO:: FIRST in 17/07/25 -->
+								<input type="hidden" value="${vo.crawling_daum_id}" />
+								<input type="submit" value="Make WordCloud" />
+							</td>
+						</tr>
+					</c:forEach>
+				</form>
+
 			</tbody>
 		</table>
 	</div>
