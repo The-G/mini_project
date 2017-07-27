@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="trans">
+
+	<typeAlias alias="trnas" type="proj.model.MovieCommentVO" />
+
+	<cacheModel type="memory" id="listCache">
+	
+
+			<flushInterval hours="24" />
+
+			<!-- <flushOnExecute statement="trans.inKeyword"/> -->
+			<flushOnExecute statement="trans.OutKeyword" />
+
+		</cacheModel>
+
+		<resultMap class="MovieCommentVO" id="keywordMap">
+
+			<result property="movie_id" column="movie_id" />
+			<result property="keyword_ko" column="keyword_ko" />
+			<result property="keyword_en" column="keyword_en" />
+			<result property="keyword_ch" column="keyword_ch" />
+			<result property="count" column="count" />
+
+		</resultMap>
+		<select id="transword_en" parameterClass="long" resultClass="MovieCommentVO">
+			select
+			movie_id, keyword_ko, keyword_en,count
+			from keyword
+			where keyword_en=null
+		</select>
+
+		<select id="transword_ch" parameterClass="long" resultClass="MovieCommentVO">
+			select
+			movie_id, keyword_ko, keyword_ch,count
+			from keyword
+			where keyword_cn=null
+		</select>
+		<insert id="trans.OutKeyword" parameterClass="MovieCommentVO">
+			UPDATE keyword SET keyword_en=# 
+
+
+		</insert>
+
+</sqlMap>

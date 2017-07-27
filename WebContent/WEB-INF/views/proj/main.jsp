@@ -59,72 +59,58 @@ footer {
 
 </head>
 <body>
-<div class="container text-center">
-		 <img src= "../resource/img/title.png"><br>
-		
-		
+	<div class="container text-center">
+		<img src="../resource/img/title.png"><br>
 	</div>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="main">Home</a>
-        </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">WordCloud</a></li>
-        <li><a href="#">Analytics</a></li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="testAction"><span class="glyphicon glyphicon-user"></span>test</font></a></li>
-         <c:if test="${empty loginUser}">
-        <li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-         </c:if>
-         <c:if test="${not empty loginUser}">  
-		<li><a href="${context}/logout.do"><span class="glyphicon glyphicon-user"></span> Logout</a></li>			
-		<li><a href="${context}/mypage.do"><span class="glyphicon glyphicon-user"></span> Mypage</a></li>			
-		</c:if>			
-					
-					
-					
-      </ul>
-    </div>
-  </div>
-</nav>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="main">Home</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">WordCloud</a></li>
+					<li><a href="#">Analytics</a></li>
 
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="drawplot"><font color="f2f516">우창 페이지</font></a></li>
+					<li><a href="testAction"><span class="glyphicon glyphicon-user"></span>test</font></a></li>
+					<c:if test="${empty loginUser}">
+						<li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+					</c:if>
+					<c:if test="${not empty loginUser}">
+						<li><a href="${context}/logout.do"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+						<li><a href="${context}/mypage.do"><span class="glyphicon glyphicon-user"></span> Mypage</a></li>
+					</c:if>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-	<header>
-		<div class="header-content">
-			<div class="header-content-inner">
-		
-			
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				
-				
-			
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
 	<form action="searchAction" method="post">
 		<input type="text" name="movie_name" style="color: black"
 			placeholder="영화이름입력" required="required"> <b> <input
 			type="submit" color="color:black" value="검색"
-			style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"
-			></b>
+			style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"></b>
 	</form>
-
 </body>
 
 
