@@ -92,7 +92,6 @@ INSERT INTO KEYWORD(keyword_ko, movie_id)
 values('킹왕짱',1);
 
 
-<<<<<<< HEAD
 SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
 FROM   MOVIE
 WHERE name LIKE '%스파이더맨%';
@@ -114,5 +113,3 @@ WHERE name LIKE '%' || '스파이더맨' || '%';
 select keyword_ko from keyword where keyword_en is null;
 select * from keyword;
 commit
-=======
->>>>>>> 1073de95a03fa81251d5bbe9490c9c3f5dfb4055

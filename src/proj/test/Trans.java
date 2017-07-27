@@ -37,7 +37,6 @@ public class Trans extends HttpServlet {
 	   StringBuffer word1 = new StringBuffer();
 		   for(KeywordVO keywordVO : list){
 			   word1.append(keywordVO.getKeyword_ko()+"\n" );
-			   
 		   }
 
 	      String clientId = "ubasmpZ93GesXy0pAZhb";//애플리케이션 클라이언트 아이디값";

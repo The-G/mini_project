@@ -63,7 +63,7 @@ public class KeywordImpl implements KeywordDAO {
 				ps.setString(1,keywordVO.getKeyword_en());
 				ps.executeUpdate();
 			}
-			System.out.println("업데이트성공");
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
