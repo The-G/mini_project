@@ -1,84 +1,162 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="context" value="${pageContext.request.contextPath}"/> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원 관리</title>
+<title>Bootstrap Example</title>
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/member.font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+    <!-- Custom style -->
+    <link rel="stylesheet" href="css/member.style.css" media="screen" title="no title" charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+	margin-bottom: 50px;
+	border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+	margin-bottom: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
+</style>
 <script type="text/javascript" src='<c:url value="/resource/js/member.js"/>'></script>
 </head>
 <body>
-	<h2>회원가입</h2>
-	"*" 표시 항목은 필수 입력 항목입니다.
-	<form method="post" action="join.do" name="frm">
-		<table>
-			<tr>
-				<td>* 이름</td>
-				<td><input type="text" name="name" size="20"></td>
-			</tr>
-			<tr>
-				<td>* 아이디</td>
-				<td><input type="text" name="userid" size="20" id="userid">
-					<input type="hidden" name="reid" size="20"> <input
-					type="button" value="중복체크" onclick="idCheck()"></td>
-			</tr>
+
+	<div class="container text-center">
+		<img src= "${context}/resource/img/title.png">
+		
+	</div>
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="main">Home</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">WordCloud</a></li>
+				<li><a href="#">Analytics</a></li>
+
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+         <c:if test="${empty loginUser}">
+        <li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+         </c:if>
+         <c:if test="${not empty loginUser}">  
+		<li><a href="${context}/logout.do"><span class="glyphicon glyphicon-user"></span> Logout</a></li>			
+		<li><a href="${context}/mypage.do"><span class="glyphicon glyphicon-user"></span> Mypage</a></li>			
+		</c:if>		
+
+
+
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<article class="container">
+        <div class="page-header">
+          <h1>회원가입 <small>Sign up</small></h1>
+        </div>
+        <form method="post" action="join.do" name="frm">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <label for="username">이름</label>
+              <input type="text" class="form-control" name="name" >
+            </div>
+            
+            <div class="form-group">
+              <label for="InputId">아이디</label>
+              <input type="text" name="userid" class="form-control" >
+              <input type="hidden" name="reid" size="20">
+              <input type="button" class="btn btn-info" value="중복체크" onclick="idCheck()">
+            </div>
 			
-			<tr>
-				<td>* 비밀번호</td>
-				<td><input type="password" name="pwd" size="20"></td>
-			</tr>
-			<tr>	
-				<td>* 비밀번호 확인</td>
-				<td><input type="password" name="pwd_check" size="20"></td>
-			</tr>
+            <div class="form-group">
+              <label for="InputPassword1">비밀번호</label>
+              <input type="password" name ="pwd" class="form-control" >
+            </div>
 			
-			<tr>
-				<td>닉네임</td>
-				<td><input type="text" name="nickname" size="20"></td>
-			</tr>
-			<tr>
-				<td>이메일</td>
-				<td><input type="text" name="email" size="20"></td>
-			</tr>
-			<tr>
-				<td>휴대폰번호</td>
-				<td><input type="text" name="phone" size="20"></td>
-			</tr>
-			<tr>
-				<td>당신의 최악의 영화는?</td>
-				<td><input type="text" name="worstMovie" size="20"></td>
-			</tr>
-			<tr>
-			<td>성별</td>
-			<td><input type="radio" name="gender" value="0" checked="checked">남성
-				<input type="radio" name="gender" value="1">여성
-			</td>
-			</tr>
-			<tr>
-			<td>이메일 수신 여부</td>
-            <td>
-            <input type="radio" name="receiveEmail" value="0" checked="checked">예
-            <input type="radio" name="receiveEmail" value="1">아니요
-            </td>
-            </tr>
-            <tr>
-            <td>SNS수신여부</td>
-            <td>
-            <input type="radio" name="receiveSns" value="0" checked="checked">예
-            <input type="radio" name="receiveSns" value="1">아니요
-            </td>
-			</tr>
+            <div class="form-group">
+              <label for="InputPassword2">비밀번호 확인</label>
+              <input type="password" name="pwd_check" class="form-control" >
+              <p class="help-block">비밀번호 확인을 위해 다시 한번 입력 해 주세요</p>
+            </div>
+                       
+            <div class="form-group">
+              <label for="nickname">닉네임</label>
+              <input type="text" class="form-control" name="nickname" >
+            </div>
+            
+              <div class="form-group">
+              <label for="InputEmail">이메일 주소</label>
+              <input type="text" class="form-control" name="email" >
+            </div>
+			 			
+			<div class="form-group">
+              <label for="Inputphone">휴대폰 번호</label>
+              <input type="text" class="form-control" name="phone" >
+            </div>
+            
+             <div class="form-group">
+              <label for="Inputworst">당신의 최악의 영화는?</label>
+              <input type="text" class="form-control" name="worstMovie" >
+            </div>
 			
-			<tr>
-				<td colspan="2" align="center">
-				<input type="submit" value="확인" onclick= "return joinCheck()"> &nbsp;&nbsp;&nbsp;&nbsp; 
-			    <input type="reset" value="취소"></td>
-			</tr>
-			<tr>
-				<td colspan="2">${message}</td>
-			</tr>
-		</table>
-	</form>
+			<div class="form-group">
+			<label for="gender">성별</label>
+              <input type="radio" name="gender" value="0" checked="checked">남
+			  <input type="radio" name="gender" value="1" >여
+             </div>
+             
+            <div class="form-group">
+			<label for="이메일수신여부">이메일 수신여부</label>
+              <input type="radio"  name="receiveEmail" value="0" checked="checked">예
+			  <input type="radio" name="receiveEmail" value="1" >아니요
+             </div>
+             
+              
+            <div class="form-group">
+			<label for="SNS수신여무">SNS 수신여부</label>
+              <input type="radio"  name="receiveSns" value="0" checked="checked">예
+			  <input type="radio" name="receiveSns" value="1" >아니요
+             </div>
+          
+            <div class="form-group text-center">
+              <input type="submit" class="btn btn-info" value="회원가입" onclick= "return joinCheck()" ><i class="fa fa-check spaceLeft"></i>
+              <input type="reset" class="btn btn-warning" value ="재작성"><i class="fa fa-times spaceLeft"></i>
+            </div>
+            
+        </div>
+        </form>
+      </article>
+
+
+
+
 </body>
 </html>

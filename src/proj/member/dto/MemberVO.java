@@ -11,6 +11,7 @@ public class MemberVO {
 	private int gender;
 	private int receiveEmail;
 	private int receiveSns;
+	
 	public String getName() {
 		return name;
 	}

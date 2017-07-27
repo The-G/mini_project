@@ -39,7 +39,7 @@ CREATE TABLE movie
 	name varchar2(400) NOT NULL,
 	release_date date NOT NULL,
 	director varchar2(1000),
-	crawling_daum_id number,
+	crawling_daum_id number UNIQUE,
 	img_url varchar2(4000),
 	daum_info_link varchar2(4000),
 	PRIMARY KEY (movie_id)
@@ -51,7 +51,7 @@ CREATE TABLE movie_comment
 	url varchar2(2000),
 	nickname varchar2(1000),
 	score number,
-	content varchar2(4000),
+	content varchar2(4000) UNIQUE,
 	movie_id number NOT NULL
 );
 
@@ -71,28 +71,28 @@ ALTER TABLE movie_comment
 ;
 
 
-SELECT * FROM MOVIE order by movie_id;
+select * from MOVIE_COMMENT;
 
-INSERT INTO movie(movie_id, img_url, name, daum_info_link, release_date)
-VALUES(1, 'dfd', 'fdsa', 'fdsaf', to_date('2011/04/22 08:30:00', 'yyyy/mm/dd hh24:mi:ss'));
-
-SELECT * FROM MOVIE_COMMENT;
-
---delete MOVIE_COMMENT
---where movie_id = 2;
-
-INSERT INTO movie_comment(nickname, score, content, movie_id)
-VALUES('ttat', 4, 'fdasfdsa', 2);
+SELECT nickname, score, content, movie_id
+FROM   MOVIE_COMMENT
+WHERE movie_id = 2;
 
 
-SELECT * FROM MOVIE;
-WHERE name =
-
-SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
-FROM MOVIE;
-WHERE name LIKE '%스파이더%';
+select * from movie;
+select * from MOVIE_COMMENT;
 
 
+SELECT  nickname, score, content, movie_id
+FROM    MOVIE_COMMENT
+WHERE   movie_id = 127 and content is not null;
+
+select * from KEYWORD;
+
+INSERT INTO KEYWORD(keyword_ko, movie_id)
+values('킹왕짱',1);
+
+
+<<<<<<< HEAD
 SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
 FROM   MOVIE
 WHERE name LIKE '%스파이더맨%';
@@ -114,3 +114,5 @@ WHERE name LIKE '%' || '스파이더맨' || '%';
 select keyword_ko from keyword where keyword_en is null;
 select * from keyword;
 commit
+=======
+>>>>>>> 1073de95a03fa81251d5bbe9490c9c3f5dfb4055

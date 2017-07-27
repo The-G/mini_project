@@ -2,7 +2,7 @@ package proj.models;
 
 import java.util.List;
 
-import org.jsoup.nodes.Element;
+import org.json.JSONArray;
 
 public interface MovieDAO {
 
@@ -13,5 +13,9 @@ public interface MovieDAO {
 	void make_wordcloud(MovieCommentVO movieCommentVO) throws Exception;
 
 	List<MovieVO> getMovieList(MovieVO movieVO);
+	
+	List<MovieCommentVO> getMovieCommentList(MovieCommentVO movieCommentVO);
+
+	JSONArray countWord(List<MovieCommentVO> list);
 
 }

@@ -24,7 +24,7 @@ public class ProjTestAction extends AbstractController {
 //		String pwd = request.getParameter("pwd"); //page 값을 여기서 받아서!!
 		
 //		MovieVO movieVO = new MovieVO(); // 이거는 admin이 수행하지.. 영화 정보 긁기
-		MovieCommentVO movieCommentVO = new MovieCommentVO();
+//		MovieCommentVO movieCommentVO = new MovieCommentVO();
 //		movieVO.setNo(no);
 //		movieVO.setPwd(pwd);
 		
@@ -37,7 +37,7 @@ public class ProjTestAction extends AbstractController {
 //			movieDAO.make_wordcloud(movieCommentVO);
 //			movieDAO.deleteArticle(movieVO);
 			mav.addObject("msg", "크롤링 / wordcloud 성공");
-			mav.addObject("url", "wordcloud");
+			mav.addObject("url", "javascript:history.back();");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", e.getMessage());
