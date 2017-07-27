@@ -141,7 +141,7 @@ public class MemberDAO {
 	
 	public int insertMember(MemberVO mVo){
 		int result = -1;
-		String sql="insert into member values(?,?,?,?,?,?,?,?,?,?)";
+		String sql=" insert into member values(? , ? , ? , ? , ? , ? , ? , ? , ? , ?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try{
@@ -157,7 +157,6 @@ public class MemberDAO {
 			pstmt.setInt(8, mVo.getGender());
 			pstmt.setInt(9, mVo.getReceiveEmail());
 			pstmt.setInt(10, mVo.getReceiveSns());
-			
 			result = pstmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -172,6 +171,7 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
 	public int updateMember(MemberVO mVo) {
 		int result = -1;
 		String sql = "update member set pwd=?, nickname=?, email=?, phone=?, worstMoive=?, gender=?,receiveMail=?,receiveSns=? where userid=?";

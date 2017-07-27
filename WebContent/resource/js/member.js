@@ -63,16 +63,62 @@ function joinCheck(){
 }
 
 
-function confirmSave(checkbox){
-	  var isRemember;
-	  // 로그인 정보 저장한다고 선택할 경우
-	  if(checkbox.checked)  {
-	    isRemember = confirm("이 PC에 로그인 정보를 저장하시겠습니까? \n\nPC방등의 공공장소에서는 개인정보가 유출될 수 있으니 주의해주십시오.");
-	    if(!isRemember)
-	      checkbox.checked = false;
-	  }
-	}
+window.onload = function() {
+	 
+    if (getCookie("userid")) { // getCookie함수로 id라는 이름의 쿠키를 불러와서 있을경우
+        document.frm.userid.value = getCookie("userid"); //input 이름이 id인곳에 getCookie("id")값을 넣어줌
+        document.frm.idsave.checked = true; // 체크는 체크됨으로
+    }
 
+}
+
+function setCookie(name, value, expiredays) //쿠키 저장함수
+{
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + "=" + escape(value) + "; path=/; expires="
+            + todayDate.toGMTString() + ";"
+}
+
+function getCookie(Name) { // 쿠키 불러오는 함수
+    var search = Name + "=";
+    if (document.cookie.length > 0) { // if there are any cookies
+        offset = document.cookie.indexOf(search);
+        if (offset != -1) { // if cookie exists
+            offset += search.length; // set index of beginning of value
+            end = document.cookie.indexOf(";", offset); // set index of end of cookie value
+            if (end == -1)
+                end = document.cookie.length;
+            return unescape(document.cookie.substring(offset, end));
+        }
+    }
+}
+
+function sendit() {
+	  if (document.frm.idsave.checked == true) { // 아이디 저장을 체크 하였을때
+          setCookie("userid", document.frm.userid.value, 7); //쿠키이름을 id로 아이디입력필드값을 7일동안 저장
+      } else { // 아이디 저장을 체크 하지 않았을때
+          setCookie("userid", document.frm.userid.value, 0); //날짜를 0으로 저장하여 쿠키삭제
+      }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 	
 

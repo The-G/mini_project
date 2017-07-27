@@ -3,7 +3,7 @@
 
 DROP TABLE member CASCADE CONSTRAINTS;
 
-
+select * from member;
 
 
 /* Create Tables */
