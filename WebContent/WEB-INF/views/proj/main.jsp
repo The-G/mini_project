@@ -63,7 +63,7 @@ footer {
 </head>
 <body>
 	<div class="container text-center">
-		<img src="../resource/img/title.png"><br>
+		<img src="${context}/resource/img/title.png"><br>
 	</div>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -106,7 +106,7 @@ footer {
 				<br> <br> <br> <br>
 
 				<form action="searchAction" method="post">
-					<input type="text" name="movie_name" style="color: black"
+					<input type="text"  name="movie_name" style="color: black"
 						placeholder="영화이름입력" required="required"> <b> <input
 						type="submit" color="color:black" value="검색"
 						style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"></b>

@@ -43,7 +43,7 @@ footer {
 <body>
 
 	<div class="container text-center">
-		<img src= "${context}/resource/img/title3.png">
+		<img src= "${context}/resource/img/title.png">
 		
 	</div>
 	<nav class="navbar navbar-inverse">
