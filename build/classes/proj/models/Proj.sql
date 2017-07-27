@@ -92,3 +92,24 @@ INSERT INTO KEYWORD(keyword_ko, movie_id)
 values('킹왕짱',1);
 
 
+SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
+FROM   MOVIE
+WHERE name LIKE '%스파이더맨%';
+
+
+SELECT MOVIE_ID, NAME, RELEASE_DATE, CRAWLING_DAUM_ID, IMG_URL, DAUM_INFO_LINK
+FROM   bigdata.MOVIE
+WHERE name LIKE '%' || '스파이더맨' || '%';
+		
+-- Movie table
+--MOVIE_ID 
+--NAME
+--RELEASE_DATE
+--DIRECTOR 
+--CRAWLING_DAUM_ID 
+--IMG_URL
+--DAUM_INFO_LINK
+
+select keyword_ko from keyword where keyword_en is null;
+select * from keyword;
+commit
