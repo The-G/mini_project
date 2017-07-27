@@ -29,22 +29,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<form action="searchAction" method="post">
-					<c:forEach items="${list}" var="vo">
-						<tr>
-							<td>${vo.name}</td>
-							<td><img src="${vo.img_url}" /></td>
-							<td><fmt:formatDate value="${vo.release_date}" type="both"
-									dateStyle="short" timeStyle="short" /></td>
-							<td>
-								<!-- TODO:: FIRST in 17/07/25 -->
-								<input type="hidden" value="${vo.crawling_daum_id}" />
+				<c:forEach items="${list}" var="vo">
+					<tr>
+						<td>${vo.name}</td>
+						<td><img src="${vo.img_url}" /></td>
+						<td><fmt:formatDate value="${vo.release_date}" type="both"
+								dateStyle="short" timeStyle="short" /></td>
+						<td>
+							<form action="crawlingCommentAction" method="post">
+								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
+								<input type="hidden" name="crawling_id" value="${vo.crawling_daum_id}" />
 								<input type="submit" value="Make WordCloud" />
-							</td>
-						</tr>
-					</c:forEach>
-				</form>
-
+							</form>
+						</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>

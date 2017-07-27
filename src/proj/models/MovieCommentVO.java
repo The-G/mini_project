@@ -7,6 +7,7 @@ public class MovieCommentVO {
 	private long score;
 	private String content;
 	private long movie_id;
+	private long crawling_id;
 	public String getUrl() {
 		return url;
 	}
@@ -37,10 +38,16 @@ public class MovieCommentVO {
 	public void setMovie_id(long movie_id) {
 		this.movie_id = movie_id;
 	}
+	public long getCrawling_id() {
+		return crawling_id;
+	}
+	public void setCrawling_id(long crawling_id) {
+		this.crawling_id = crawling_id;
+	}
 	@Override
 	public String toString() {
 		return "MovieCommentVO [url=" + url + ", nickname=" + nickname + ", score=" + score + ", content=" + content
-				+ ", movie_id=" + movie_id + "]";
+				+ ", movie_id=" + movie_id + ", crawling_id=" + crawling_id + "]";
 	}
 
 }
