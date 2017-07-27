@@ -30,12 +30,40 @@
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
+}	
+.green_window {
+	display: inline-block;
+	width: 366px; height: 50px;
+	border: 3px solid #0066FF;
+	background: white;
+}
+.input_text {
+	width: 348px; height: 40px;
+	margin: 3px 0 0 9px;
+	border: 0;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+	outline: none;
+}
+.sch_smit {
+	width: 54px; height: 50px;
+	margin: 0; border: 0;
+	vertical-align: top;
+	background: #0066FF;
+	color: white;
+	font-weight: bold;
+	border-radius: 1px;
+	cursor: pointer;
+}
+.sch_smit:hover {
+	background: #0066FF;
 }
 </style>
 </head>
 <body>
 	<div class="container text-center">
-		<img src="${context}/resource/img/title3.png">
+		<img src="${context}/resource/img/title.png">
 	</div>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -49,8 +77,8 @@ footer {
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">WordCloud</a></li>
-					<li><a href="#">Analytics</a></li>
+					<a class="navbar-brand" href="main">MoiveChart</a>
+			
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<c:if test="${empty loginUser}">
@@ -67,6 +95,20 @@ footer {
 			</div>
 		</div>
 	</nav>
+	<article class="container">
+        <div class="page-header">
+          <h1> Serched Moives <br><small> <c:forEach items="${list}" var="vo">${vo.name},</c:forEach> </small></h1>
+          <br>  
+          <form action="searchAction" method="post">
+                     <center>
+                     <span class="green_window">
+						<input type="text" class="input_text" name="movie_name" style="color: black"
+						placeholder="영화재검색"  required="required" > </span>
+							<input	type="submit" class="sch_smit" value="검색">
+				     </center>
+					</form><br/>
+        </div>
+    </article>
 	<div class="container">
 		<div class="row">
 			<c:forEach items="${list}" var="vo">
@@ -82,6 +124,13 @@ footer {
 								dateStyle="short" timeStyle="short" />
 							<form action="crawlingCommentAction" method="post">
 								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
+<<<<<<< HEAD
+								<input type="hidden" name="crawling_id" 
+									value="${vo.crawling_daum_id}" /><br> <input
+									type="submit" value="Make WordCloud" class="btn btn-info"/>
+							</div>
+
+=======
 								<input type="hidden" name="crawling_id"
 									value="${vo.crawling_daum_id}" /><br> 
 								<input type="submit" value="Make WordCloud" />
@@ -90,6 +139,7 @@ footer {
 								<input type="hidden" name="name" value="${vo.name}" />
 								<input type="submit" value="Plot" />
 							</form>
+>>>>>>> 5cc55430cc819706fbd0d1098c97beeb227c519f
 						</div>
 
 					</div>

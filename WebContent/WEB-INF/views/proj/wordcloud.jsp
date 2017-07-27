@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="context" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,12 @@
 <link rel="shortcut icon" href="/favicon.ico" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="<c:url value="/resource/css/bootstrap.css" />">
 <script src="<c:url value="/resource/js/jquery-3.2.1.js" />"></script>
@@ -33,21 +40,37 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="${context}/main">Home</a>
+				<a class="navbar-brand" href="main">Home</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">WordCloud</a></li>
-					<li><a href="#">Analytics</a></li>
+					<a class="navbar-brand" href="main">MoiveChart</a>
 
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-
+					<c:if test="${empty loginUser}">
+						<li><a href="${context}/login.do"><span
+								class="glyphicon glyphicon-user"></span> Login</a></li>
+					</c:if>
+					<c:if test="${not empty loginUser}">
+						<li><a href="${context}/logout.do"><span
+								class="glyphicon glyphicon-user"></span> Logout</a></li>
+						<li><a href="${context}/mypage.do"><span
+								class="glyphicon glyphicon-user"></span> Mypage</a></li>
+					</c:if>
 
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<article class="container">
+		<div class="page-header">
+			<h1>
+				WORDCLOUD FOR<small> </small>
+			</h1>
+		</div>
+	</article>
+
 
 	<div class="container">
 		<div class="row">
@@ -63,6 +86,9 @@
 				<table class="table">
 					<h1 class="text-center">영화 댓글</h1>
 					<thead class="thead-inverse">
+						<tr>
+
+						</tr>
 						<tr>
 							<th>score</th>
 							<th>content</th>

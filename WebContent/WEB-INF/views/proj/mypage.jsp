@@ -54,14 +54,13 @@ footer {
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="${context}/main">Home</a>
+			<a class="navbar-brand" href="main">Home</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">WordCloud</a></li>
-				<li><a href="#">Analytics</a></li>
-
-			</ul>
+					<a class="navbar-brand" href="main">MoiveChart</a>
+			
+				</ul>	
 			<ul class="nav navbar-nav navbar-right">
          <c:if test="${empty loginUser}">
         <li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>

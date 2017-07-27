@@ -59,6 +59,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		MemberDAO mDao = MemberDAO.getInstance();
 		mDao.updateMember(mVo);
 		response.sendRedirect("login.do");
+
 	}
 
 }
