@@ -44,8 +44,11 @@ public class LoginServlet extends HttpServlet {
 			MemberVO mVo =mDao.getMember(userid);
 			HttpSession session=request.getSession();
 			session.setAttribute("loginUser", mVo);
-			request.setAttribute("message", "회원인증에 성공했습니다.");
-			url="/WEB-INF/views/proj/main.jsp";
+
+			response.sendRedirect("proj/main");
+			//request.setAttribute("message", "회원인증에 성공했습니다.");
+			//url="/WEB-INF/views/proj/main.jsp";
+			return;
 		}else if(result==0){
 			request.setAttribute("message", "비밀번호가 맞지 않습니다.");
 		}else if(result==-1){
