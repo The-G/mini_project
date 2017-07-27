@@ -23,13 +23,15 @@ public class ProjDrawPlot extends AbstractController {
 		ModelAndView mav = new ModelAndView();
 		WebElement temp_list;
 		
+		String name = request.getParameter("name");
+
 		System.setProperty(
                 "webdriver.chrome.driver",
                 "C:/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://www.kobis.or.kr/kobis/business/mast/mvie/searchMovieList.do");
 		
-		driver.findElement(By.name("sMovName")).sendKeys("타짜-신의 손");
+		driver.findElement(By.name("sMovName")).sendKeys(name);
 		driver.findElement(By.xpath("//*[@id='searchMainTopMovie']/table/tbody/tr/td[2]/img")).click();
 		
 		driver.findElement(By.xpath("//*[@id='content']/table/tbody/tr[1]/td[1]/a")).click();

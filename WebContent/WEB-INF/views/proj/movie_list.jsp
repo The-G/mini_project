@@ -69,28 +69,32 @@ footer {
 	</nav>
 	<div class="container">
 		<div class="row">
-			<form action="crawlingCommentAction" method="post">
-				<c:forEach items="${list}" var="vo">
-					<div class="col-sm-3">
-						<div class="panel panel-primary">
-							<div class="panel-heading">${vo.name}</div>
-							<div class="panel-body">
-								<img src="${vo.img_url}" class="img-responsive"
-									style="width: 100%" alt="Image">
-							</div>
-							<div class="panel-footer">
-								<fmt:formatDate value="${vo.release_date}" type="both"
-									dateStyle="short" timeStyle="short" />
+			<c:forEach items="${list}" var="vo">
+				<div class="col-sm-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">${vo.name}</div>
+						<div class="panel-body">
+							<img src="${vo.img_url}" class="img-responsive"
+								style="width: 100%" alt="Image">
+						</div>
+						<div class="panel-footer">
+							<fmt:formatDate value="${vo.release_date}" type="both"
+								dateStyle="short" timeStyle="short" />
+							<form action="crawlingCommentAction" method="post">
 								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
 								<input type="hidden" name="crawling_id"
-									value="${vo.crawling_daum_id}" /><br> <input
-									type="submit" value="Make WordCloud" />
-							</div>
-
+									value="${vo.crawling_daum_id}" /><br> 
+								<input type="submit" value="Make WordCloud" />
+							</form>
+							<form action="drawplot" method="post">
+								<input type="hidden" name="name" value="${vo.name}" />
+								<input type="submit" value="Plot" />
+							</form>
 						</div>
+
 					</div>
-				</c:forEach>
-			</form>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
 </body>
