@@ -1,5 +1,6 @@
 package proj.models;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -17,5 +18,7 @@ public interface MovieDAO {
 	List<MovieCommentVO> getMovieCommentList(MovieCommentVO movieCommentVO);
 
 	JSONArray countWord(List<MovieCommentVO> list);
+
+	HashMap<String, Integer> countWord2(List<MovieCommentVO> list);
 
 }

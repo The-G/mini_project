@@ -340,4 +340,33 @@ public class MovieDAOImpl implements MovieDAO {
         return str.replaceAll("\\p{Punct}|\\p{Digit}", "");
     }
 
+	@Override
+	public HashMap<String, Integer> countWord2(List<MovieCommentVO> list) {
+
+		String append_text = "";
+
+		for (int i=0;i < list.size();i++) {
+		  append_text = append_text.concat(list.get(i).getContent().toString());
+		  append_text = append_text.concat(list.get(i).getContent());
+		  append_text = append_text.concat(System.lineSeparator());
+		}
+
+	    HashMap<String, Integer> count = new HashMap<String, Integer>();
+	    
+        Scanner scan = new Scanner(append_text);
+
+        while (scan.hasNext()) {
+            String word = removePunctuations(scan.next());
+            if (word.equals("")) continue;
+            Integer n = (Integer) count.get(word);
+
+            count.put(word, (n == null) ? 1 : n + 1);
+        }
+
+        System.out.println(count);
+
+        
+		return count;
+	}
+
 }

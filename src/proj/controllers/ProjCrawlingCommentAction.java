@@ -1,5 +1,6 @@
 package proj.controllers;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +35,7 @@ public class ProjCrawlingCommentAction extends AbstractController {
 			
 			List<MovieCommentVO> list = movieDAO.getMovieCommentList(movieCommentVO);
 			JSONArray count_word = movieDAO.countWord(list); 
+			HashMap<String, Integer> count_word2 = movieDAO.countWord2(list); 
 		    
 
 			
@@ -43,6 +45,7 @@ public class ProjCrawlingCommentAction extends AbstractController {
 			mav.setViewName("/WEB-INF/views/proj/wordcloud.jsp");
 			mav.addObject("list", list);
 			mav.addObject("count_word", count_word);
+			mav.addObject("count_word2", count_word2);
 
 		} catch (Exception e) {
 			e.printStackTrace();
