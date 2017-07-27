@@ -55,14 +55,13 @@ footer {
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="${context}/main">Home</a>
+			<a class="navbar-brand" href="main">Home</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">WordCloud</a></li>
-				<li><a href="#">Analytics</a></li>
-
-			</ul>
+					<a class="navbar-brand" href="main">MoiveChart</a>
+			
+				</ul>
 			<ul class="nav navbar-nav navbar-right">
        	
 
@@ -75,7 +74,7 @@ footer {
         <div class="page-header">
           <h1>로그인 <small>login</small></h1>
         </div>
-
+    </article>
 	<form method="post" action="login.do" name="frm">
 		
 		<div class="col-md-6 col-md-offset-3">
@@ -95,7 +94,7 @@ footer {
             <div class="form-group text-center">
               <input type="submit" class="btn btn-info" value="로그인" onclick= "return loginCheck()" ><i class="fa fa-check spaceLeft"></i>
               <input type="button" class="btn btn-warning" value ="회원가입" onclick="location.href='join.do'"><i class="fa fa-times spaceLeft"></i>
-              <td colspan="2">${message}</td>
+              <td colspan="2"> ${message}</td>
             </div>
 
 

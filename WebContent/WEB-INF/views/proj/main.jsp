@@ -30,6 +30,35 @@ footer {
 	background-color: #f2f2f2;
 	padding: 25px;
 }
+.green_window {
+	display: inline-block;
+	width: 366px; height: 50px;
+	border: 3px solid #FF0000;
+	background: white;
+}
+.input_text {
+	width: 348px; height: 40px;
+	margin: 3px 0 0 9px;
+	border: 0;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+	outline: none;
+}
+.sch_smit {
+	width: 54px; height: 50px;
+	margin: 0; border: 0;
+	vertical-align: top;
+	background: #FF0000;
+	color: white;
+	font-weight: bold;
+	border-radius: 1px;
+	cursor: pointer;
+}
+.sch_smit:hover {
+	background: #FF0000;
+}
+
 </style>
 <title>mini_project</title>
 <link rel="shortcut icon" href="../resource/img/favicon.png" />
@@ -65,7 +94,8 @@ footer {
 	<div class="container text-center">
 		<img src="${context}/resource/img/title.png"><br>
 	</div>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse"
+		style="margin-bottom: 0; padding-bottom: 0;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -77,14 +107,14 @@ footer {
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">WordCloud</a></li>
-					<li><a href="#">Analytics</a></li>
+					<a class="navbar-brand" href="main">MoiveChart</a>
+					
 
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="drawplot"><font color="f2f516">우창 페이지</font></a></li>
+					<li><a href="drawplot"><font color="f2f516" class="glyphicon glyphicon-user">우창 페이지</font></a></li>
 					<li><a href="testAction"><span
-							class="glyphicon glyphicon-user"></span>test</font></a></li>
+							class="glyphicon glyphicon-user" class="glyphicon glyphicon-user"></span> test</font></a></li>
 					<c:if test="${empty loginUser}">
 						<li><a href="${context}/login.do"><span
 								class="glyphicon glyphicon-user"></span> Login</a></li>
@@ -99,18 +129,21 @@ footer {
 			</div>
 		</div>
 	</nav>
-	<header>
-		<div class="header-content">
-			<div class="header-content-inner">
-				<br> <br> <br> <br> <br> <br> <br>
-				<br> <br> <br> <br>
 
-				<form action="searchAction" method="post">
-					<input type="text"  name="movie_name" style="color: black"
-						placeholder="영화이름입력" required="required"> <b> <input
-						type="submit" color="color:black" value="검색"
-						style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"></b>
-				</form>
+	<header>
+	<br>
+		<c:if test="${not empty loginUser}">
+					<form action="searchAction" method="post">
+                     <span class="green_window">
+						<input type="text" class="input_text" name="movie_name" style="color: black"
+							placeholder="영화이름입력"  required="required"> </span><b> 
+							<input	type="submit" class="sch_smit" value="검색"></b>
+					</form>
+				</c:if>	
+			<div class="header-content">
+			<div class="header-content-inner">
+				
+			
 			</div>
 		</div>
 	</header>

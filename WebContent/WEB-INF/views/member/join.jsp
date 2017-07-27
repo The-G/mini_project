@@ -58,10 +58,9 @@ footer {
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">WordCloud</a></li>
-				<li><a href="#">Analytics</a></li>
-
-			</ul>
+					<a class="navbar-brand" href="main">MoiveChart</a>
+			
+				</ul>
 			<ul class="nav navbar-nav navbar-right">
          <c:if test="${empty loginUser}">
         <li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>
@@ -86,45 +85,45 @@ footer {
         <div class="col-md-6 col-md-offset-3">
             <div class="form-group">
               <label for="username">이름</label>
-              <input type="text" class="form-control" name="name" >
+              <input type="text" class="form-control" name="name" placeholder="이름을 입력해주세요">
             </div>
             
             <div class="form-group">
               <label for="InputId">아이디</label>
-              <input type="text" name="userid" class="form-control" >
+              <input type="text" name="userid" class="form-control" placeholder="아이디를 입력해주세요">
               <input type="hidden" name="reid" size="20">
               <input type="button" class="btn btn-info" value="중복체크" onclick="idCheck()">
             </div>
 			
             <div class="form-group">
               <label for="InputPassword1">비밀번호</label>
-              <input type="password" name ="pwd" class="form-control" >
+              <input type="password" name ="pwd" class="form-control" placeholder="비밀번호를 입력해주세요" >
             </div>
 			
             <div class="form-group">
               <label for="InputPassword2">비밀번호 확인</label>
-              <input type="password" name="pwd_check" class="form-control" >
-              <p class="help-block">비밀번호 확인을 위해 다시 한번 입력 해 주세요</p>
+              <input type="password" name="pwd_check" class="form-control" placeholder="비밀번호를 한번 더 입력해주세요" >
+             
             </div>
                        
             <div class="form-group">
               <label for="nickname">닉네임</label>
-              <input type="text" class="form-control" name="nickname" >
+              <input type="text" class="form-control" name="nickname" placeholder="닉네임을 입력해주세요" >
             </div>
             
               <div class="form-group">
               <label for="InputEmail">이메일 주소</label>
-              <input type="text" class="form-control" name="email" >
+              <input type="text" class="form-control" name="email" placeholder="이메일 주소를 입력해주세요">
             </div>
 			 			
 			<div class="form-group">
               <label for="Inputphone">휴대폰 번호</label>
-              <input type="text" class="form-control" name="phone" >
+              <input type="text" class="form-control" name="phone" placeholder="휴대폰 번호를 입력해주세요">
             </div>
             
              <div class="form-group">
               <label for="Inputworst">당신의 최악의 영화는?</label>
-              <input type="text" class="form-control" name="worstMovie" >
+              <input type="text" class="form-control" name="worstMovie" placeholder="최악의 영화가 있었나요?">
             </div>
 			
 			<div class="form-group">
