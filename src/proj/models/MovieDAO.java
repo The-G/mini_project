@@ -1,9 +1,8 @@
 package proj.models;
 
-import java.util.HashMap;
 import java.util.List;
 
-import org.jsoup.nodes.Element;
+import org.json.JSONArray;
 
 public interface MovieDAO {
 
@@ -17,6 +16,6 @@ public interface MovieDAO {
 	
 	List<MovieCommentVO> getMovieCommentList(MovieCommentVO movieCommentVO);
 
-	HashMap<String, Integer> countWord(List<MovieCommentVO> list);
+	JSONArray countWord(List<MovieCommentVO> list);
 
 }

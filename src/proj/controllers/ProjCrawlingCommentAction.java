@@ -1,15 +1,15 @@
 package proj.controllers;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
+
 import proj.models.MovieCommentVO;
 import proj.models.MovieDAO;
 import proj.models.MovieDAOImpl;
-import proj.models.MovieVO;
 
 public class ProjCrawlingCommentAction extends AbstractController {
 
@@ -33,7 +33,12 @@ public class ProjCrawlingCommentAction extends AbstractController {
 //			mav.addObject("list", list);
 			
 			List<MovieCommentVO> list = movieDAO.getMovieCommentList(movieCommentVO);
-			HashMap<String, Integer> count_word = movieDAO.countWord(list); 
+			JSONArray count_word = movieDAO.countWord(list); 
+		    
+
+			
+//			JSONObject result = new JSONObject();
+//			result.putAll(count_word);
 			
 			mav.setViewName("/WEB-INF/views/proj/wordcloud.jsp");
 			mav.addObject("list", list);
