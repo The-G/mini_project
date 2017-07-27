@@ -69,7 +69,7 @@ footer {
 	</nav>
 	<div class="container">
 		<div class="row">
-			<form action="searchAction" method="post">
+			<form action="crawlingCommentAction" method="post">
 				<c:forEach items="${list}" var="vo">
 					<div class="col-sm-3">
 						<div class="panel panel-primary">
@@ -82,8 +82,9 @@ footer {
 								<fmt:formatDate value="${vo.release_date}" type="both"
 									dateStyle="short" timeStyle="short" />
 								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
-								<input type="hidden" value="${vo.crawling_daum_id}" /><br>
-								<input type="submit" value="Make WordCloud" />
+								<input type="hidden" name="crawling_id"
+									value="${vo.crawling_daum_id}" /><br> <input
+									type="submit" value="Make WordCloud" />
 							</div>
 
 						</div>

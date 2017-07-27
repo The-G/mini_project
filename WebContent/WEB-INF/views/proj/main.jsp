@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:set var="context" value="${pageContext.request.contextPath}"/> 
+<c:set var="context" value="${pageContext.request.contextPath}" />
 <html>
 <head>
 <meta charset="UTF-8">
@@ -40,21 +40,24 @@ footer {
 	rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="${context}/resource/vendor/font-awesome/css/font-awesome.min.css"
+<link
+	href="${context}/resource/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link
-	href='${context}/resource/https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+	href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
 	rel='stylesheet' type='text/css'>
 <link
-	href='${context}/resource/https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+	href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
 	rel='stylesheet' type='text/css'>
 
 <!-- Plugin CSS -->
-<link href="${context}/resource/vendor/magnific-popup/magnific-popup.css"
+<link
+	href="${context}/resource/vendor/magnific-popup/magnific-popup.css"
 	rel="stylesheet">
 
 <!-- Theme CSS -->
-<link href="${context}/resource/css/creative.css" rel="stylesheet">
+<link href="${context}/resource/css/creative.css" rel="stylesheet"
+	type='text/css'>
 
 
 </head>
@@ -80,37 +83,37 @@ footer {
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="drawplot"><font color="f2f516">우창 페이지</font></a></li>
-					<li><a href="testAction"><span class="glyphicon glyphicon-user"></span>test</font></a></li>
+					<li><a href="testAction"><span
+							class="glyphicon glyphicon-user"></span>test</font></a></li>
 					<c:if test="${empty loginUser}">
-						<li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+						<li><a href="${context}/login.do"><span
+								class="glyphicon glyphicon-user"></span> Login</a></li>
 					</c:if>
 					<c:if test="${not empty loginUser}">
-						<li><a href="${context}/logout.do"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
-						<li><a href="${context}/mypage.do"><span class="glyphicon glyphicon-user"></span> Mypage</a></li>
+						<li><a href="${context}/logout.do"><span
+								class="glyphicon glyphicon-user"></span> Logout</a></li>
+						<li><a href="${context}/mypage.do"><span
+								class="glyphicon glyphicon-user"></span> Mypage</a></li>
 					</c:if>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<header>
+		<div class="header-content">
+			<div class="header-content-inner">
+				<br> <br> <br> <br> <br> <br> <br>
+				<br> <br> <br> <br>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
-	<form action="searchAction" method="post">
-		<input type="text" name="movie_name" style="color: black"
-			placeholder="영화이름입력" required="required"> <b> <input
-			type="submit" color="color:black" value="검색"
-			style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"></b>
-	</form>
+				<form action="searchAction" method="post">
+					<input type="text" name="movie_name" style="color: black"
+						placeholder="영화이름입력" required="required"> <b> <input
+						type="submit" color="color:black" value="검색"
+						style="width: 75; font-family: 돋움; background-color: #eff7f9; color: #000000; border: 1 solid #A0DBE4"></b>
+				</form>
+			</div>
+		</div>
+	</header>
 </body>
 
 
