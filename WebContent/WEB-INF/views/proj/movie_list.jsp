@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="context" value="${pageContext.request.contextPath}"/> 
 <!DOCTYPE html>
 <head>
 <title>Bootstrap Example</title>
@@ -34,24 +35,41 @@ footer {
 </head>
 <body>
 	<div class="container text-center">
-		<h1>Serched Movies</h1>
-		<p>you can Find, Wordcloud & Analytics</p>
-	</div>
-
-
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-
-			</div>
+		<img src= "${context}/resource/img/title3.png">
 		</div>
-	</nav>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="main">Home</a>
+        </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">WordCloud</a></li>
+        <li><a href="#">Analytics</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <c:if test="${empty loginUser}">
+        <li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+         </c:if>
+         <c:if test="${not empty loginUser}">  
+		<li><a href="${context}/logout.do"><span class="glyphicon glyphicon-user"></span> Logout</a></li>			
+		<li><a href="${context}/mypage.do"><span class="glyphicon glyphicon-user"></span> Mypage</a></li>			
+		</c:if>			
+					
+					
+					
+      </ul>
+    </div>
+  </div>
+</nav>
 
+	
 	<div class="container">
 		<div class="row">
 			<form action="searchAction" method="post">

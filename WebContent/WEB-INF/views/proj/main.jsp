@@ -1,14 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="context" value="${pageContext.request.contextPath}"/> 
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+	margin-bottom: 0px;
+	border-radius: 0;
+}
 
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+	margin-bottom: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
+</style>
 <title>mini_project</title>
-<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="../resource/img/favicon.png" />
 
 <!-- Bootstrap Core CSS -->
 <link
@@ -34,38 +58,45 @@
 
 
 </head>
-<body id="page-top">
+<body>
+<div class="container text-center">
+		 <img src= "../resource/img/title.png"><br>
+		
+		
+	</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="main">Home</a>
+        </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">WordCloud</a></li>
+        <li><a href="#">Analytics</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="testAction"><span class="glyphicon glyphicon-user"></span>test</font></a></li>
+         <c:if test="${empty loginUser}">
+        <li><a href="${context}/login.do"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+         </c:if>
+         <c:if test="${not empty loginUser}">  
+		<li><a href="${context}/logout.do"><span class="glyphicon glyphicon-user"></span> Logout</a></li>			
+		<li><a href="${context}/mypage.do"><span class="glyphicon glyphicon-user"></span> Mypage</a></li>			
+		</c:if>			
+					
+					
+					
+      </ul>
+    </div>
+  </div>
+</nav>
 
-	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> Menu <i
-						class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand page-scroll" href="main"><font color="f2f516" >영화를 부탁해</font></a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="testAction"><font color="f2f516" >test</font></a></li>
-					<c:if test="${empty loginUser}">
-					<li><a href="${context}/login.do"><font color="f2f516" >로그인</font></a></li>
-					</c:if>
-					<c:if test="${not empty loginUser}">
-					<li><a href="${context}/logout.do"><font color="f2f516" >로그아웃</font></a></li>
-					<li><a href="${context}/mypage.do"><font color="f2f516" >마이페이지</font></a></li>
-					</c:if>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container-fluid -->
-	</nav>
 
 	<header>
 		<div class="header-content">
