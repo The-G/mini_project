@@ -80,8 +80,8 @@ public class DispatcherServlet extends HttpServlet {
 			return;
 		}
 		mav = controller.handleRequestInternal(request, response);
-
 		
+
 		if (mav != null){
 			for(String key : mav.getModel().keySet()) {
 				request.setAttribute(key, mav.getModel().get(key)); 
