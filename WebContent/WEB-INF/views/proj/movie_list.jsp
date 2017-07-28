@@ -124,22 +124,15 @@ footer {
 								dateStyle="short" timeStyle="short" />
 							<form action="crawlingCommentAction" method="post">
 								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
-<<<<<<< HEAD
-								<input type="hidden" name="crawling_id" 
-									value="${vo.crawling_daum_id}" /><br> <input
-									type="submit" value="Make WordCloud" class="btn btn-info"/>
-							</div>
-
-=======
 								<input type="hidden" name="crawling_id"
 									value="${vo.crawling_daum_id}" /><br> 
 								<input type="submit" value="Make WordCloud" />
 							</form>
 							<form action="drawplot" method="post">
 								<input type="hidden" name="name" value="${vo.name}" />
+								<input type="hidden" name="release_date" value="${vo.release_date}" />
 								<input type="submit" value="Plot" />
 							</form>
->>>>>>> 5cc55430cc819706fbd0d1098c97beeb227c519f
 						</div>
 
 					</div>
