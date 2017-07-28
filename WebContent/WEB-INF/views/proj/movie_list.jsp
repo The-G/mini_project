@@ -96,6 +96,14 @@ footer {
 		</div>
 	</nav>
 	<article class="container">
+	
+	<article class="container">
+        <div class="page-header">
+          <h1>Searched Movies <small><c:forEach items="${list}" var="vo">${vo.name} / </c:forEach></small></h1>
+        </div>
+    </article>
+	
+	
         <div class="page-header">
           <br>  
           <form action="searchAction" method="post">

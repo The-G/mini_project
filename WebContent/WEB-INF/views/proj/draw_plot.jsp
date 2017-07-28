@@ -97,7 +97,7 @@
 </head>
 	<body>
 		<div class="container text-center">
-		<img src="../resource/img/title.png"><br>
+	<a href="main">   <img src="../resource/img/title.png"><br></a>
 
 
 		</div>
@@ -134,10 +134,10 @@
 		</nav> 
 		<article class="container">
         <div class="page-header">
+         <div class="page-header">
           <h1>최종 관객수 예측 <small></small></h1>
-		<span>'${movie_name}' 최종 관객수 예측 결과 :</span>
-		<span id="score_values" ></span>
-		<div id="columnchart_values" style="width: 900px; height: 600px;" ></div>
+        <h2><span>'${movie_name}' 최종 관객수 예측 결과 :  <span id="score_values" ></span> </span></h2>
+         <div id="columnchart_values" style="width: 900px; height: 600px;" ></div>
   		
   	</body>
 </html>
