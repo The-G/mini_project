@@ -78,7 +78,9 @@
 			<div class="col-md-12 col-sm-12 col-xs-12" align="center">
 				<div id="word-cloud"></div>
 			</div>
-			
+			<div class="col-md-12 col-sm-12 col-xs-12" align="center">
+				<div id="word-cloud2"></div>
+			</div>
 			<!-- some comments -->
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<table class="table">
@@ -112,7 +114,7 @@
 	var json_result = JSON.parse(result);
 	// 	console.log("second : " + json_result);
 	var frequency_list = json_result;
-
+	
 	var color = d3.scale.linear().domain(
 			[ 0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100 ]).range(
 			[ "#21618C", "#2874A6", "#2E86C1", "#3498DB", "#5DADE2", "#85C1E9",
@@ -144,5 +146,62 @@
 				});
 	}
 </script>
+
+
+	<script type="text/javascript">
+	
+		var fill = d3.scale.category20();
+		//
+		var result = '${count_word2}';
+		//
+
+		var width = 800;
+		var height = 300;
+		for (var i = 0; i < words.length; i++) {
+			/* words[i].size = 10 + Math.random() * 90;*/
+			words[i].size = 10 + result[words[i]];
+		}
+	
+		d3.layout.cloud()
+			.size([ width, height ])
+			.words(words)
+			.padding(5)
+			.rotate(function() {
+				return ~~(Math.random() * 2) * 90;
+			})
+			.font("Impact")
+			.fontSize(function(d) {
+				return d.size;
+			})
+			.on("end", draw)
+			.start();
+	
+		function draw(words) {
+			d3.select("#word-cloud2")
+				.append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.append("g")
+				.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+				.selectAll("text")
+				.data(words)
+				.enter()
+				.append("text")
+				.style("font-size", function(d) {
+					return d.size + "px";
+				})
+				.style("font-family", "Impact")
+				.style("fill", function(d, i) {
+					return fill(i);
+				})
+				.attr("text-anchor", "middle")
+				.attr("transform", function(d) {
+					return "translate(" + [ d.x, d.y ] + ")rotate(" + d.rotate + ")";
+				})
+				.text(function(d) {
+					return d.text;
+				})
+		}
+	</script>
 
 </html>
