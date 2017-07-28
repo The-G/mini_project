@@ -119,8 +119,8 @@ footer {
 								style="width: 100%" alt="Image">
 						</div>
 						<div class="panel-footer">
-							<fmt:formatDate value="${vo.release_date}" type="both"
-								dateStyle="short" timeStyle="short" />
+							<fmt:formatDate value="${vo.release_date}" type="date"
+								dateStyle="long" />
 							<form action="crawlingCommentAction" method="post">
 								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
 								<input type="hidden" name="movie_name" value="${vo.name}" />

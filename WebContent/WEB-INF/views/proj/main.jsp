@@ -30,14 +30,18 @@ footer {
 	background-color: #f2f2f2;
 	padding: 25px;
 }
+
 .green_window {
 	display: inline-block;
-	width: 366px; height: 50px;
+	width: 366px;
+	height: 50px;
 	border: 3px solid #FF0000;
 	background: white;
 }
+
 .input_text {
-	width: 348px; height: 40px;
+	width: 348px;
+	height: 40px;
 	margin: 3px 0 0 9px;
 	border: 0;
 	line-height: 30px;
@@ -45,9 +49,12 @@ footer {
 	font-size: 20px;
 	outline: none;
 }
+
 .sch_smit {
-	width: 54px; height: 50px;
-	margin: 0; border: 0;
+	width: 54px;
+	height: 50px;
+	margin: 0;
+	border: 0;
 	vertical-align: top;
 	background: #FF0000;
 	color: white;
@@ -55,10 +62,10 @@ footer {
 	border-radius: 1px;
 	cursor: pointer;
 }
+
 .sch_smit:hover {
 	background: #FF0000;
 }
-
 </style>
 <title>mini_project</title>
 <link rel="shortcut icon" href="../resource/img/favicon.png" />
@@ -108,13 +115,15 @@ footer {
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<a class="navbar-brand" href="main">MoiveChart</a>
-					
+
 
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="drawplot"><font color="f2f516" class="glyphicon glyphicon-user">우창 페이지</font></a></li>
+					<li><a href="drawplot"><font color="f2f516"
+							class="glyphicon glyphicon-user">우창 페이지</font></a></li>
 					<li><a href="testAction"><span
-							class="glyphicon glyphicon-user" class="glyphicon glyphicon-user"></span> test</font></a></li>
+							class="glyphicon glyphicon-user" class="glyphicon glyphicon-user"></span>
+							test</font></a></li>
 					<c:if test="${empty loginUser}">
 						<li><a href="${context}/login.do"><span
 								class="glyphicon glyphicon-user"></span> Login</a></li>
@@ -131,26 +140,24 @@ footer {
 	</nav>
 
 	<header>
-	<br>
-	<c:if test="${empty loginUser}">
-					<span class="green_window">
-						<input class="input_text" name="movie_name" style="color: black"
-							placeholder="로그인후 검색가능합니다."  required="required"> </span>
-							<input	type="button" class="sch_smit" value="검색">
-							</c:if>
+		<br>
+		<c:if test="${empty loginUser}">
+			<span class="green_window"> <input class="input_text"
+				name="movie_name" style="color: black" placeholder="로그인후 검색가능합니다."
+				required="required">
+			</span>
+			<input type="button" class="sch_smit" value="검색">
+		</c:if>
 		<c:if test="${not empty loginUser}">
-					<form action="searchAction" method="post">
-                     <span class="green_window">
-						<input type="text" class="input_text" name="movie_name" style="color: black"
-							placeholder="영화이름입력"  required="required"> </span><b> 
-							<input	type="submit" class="sch_smit" value="검색"></b>
-					</form>
-				</c:if>	
-			<div class="header-content">
-			<div class="header-content-inner">
-				
-			
-			</div>
+			<form action="searchAction" method="post">
+				<span class="green_window"> <input type="text"
+					class="input_text" name="movie_name" style="color: black"
+					placeholder="영화이름입력" required="required">
+				</span><b> <input type="submit" class="sch_smit" value="검색"></b>
+			</form>
+		</c:if>
+		<div class="header-content">
+			<div class="header-content-inner"></div>
 		</div>
 	</header>
 </body>
