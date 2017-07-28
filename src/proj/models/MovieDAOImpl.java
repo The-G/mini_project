@@ -170,7 +170,7 @@ public class MovieDAOImpl implements MovieDAO {
 		sql.append(" INSERT INTO movie_comment(nickname, score, content, movie_id)");
 		sql.append(" VALUES(?, ?, ?, ?)");
 
-		for (int page_num = 1; page_num < 25; page_num++) {
+		for (int page_num = 1; page_num < 30; page_num++) {
 			Document doc = null;
 			try {
 				doc = Jsoup.connect(
