@@ -63,7 +63,7 @@ footer {
 </head>
 <body>
 	<div class="container text-center">
-		<img src="${context}/resource/img/title.png">
+	<a href="main"><img src="${context}/resource/img/title.png"><br></a>
 	</div>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -97,7 +97,7 @@ footer {
 	</nav>
 	<article class="container">
         <div class="page-header">
-          <h1> Serched Moives <br><small> <c:forEach items="${list}" var="vo">${vo.name},</c:forEach> </small></h1>
+          <h1> Serched Moives <br><small> <c:forEach items="${list}" var="vo">${vo.name}/</c:forEach> </small></h1>
           <br>  
           <form action="searchAction" method="post">
                      <center>
@@ -126,15 +126,14 @@ footer {
 								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
 								<input type="hidden" name="crawling_id"
 									value="${vo.crawling_daum_id}" /><br> 
-								<input type="submit" value="Make WordCloud" />
+								<input type="submit" class="btn btn-info" value="Make WordCloud" style="float:left"/>
 							</form>
 							<form action="drawplot" method="post">
 								<input type="hidden" name="name" value="${vo.name}" />
 								<input type="hidden" name="release_date" value="${vo.release_date}" />
-								<input type="submit" value="Plot" />
+								<input type="submit" class="btn btn-warning" value="Plot" style="width:70pt;"/>
 							</form>
 						</div>
-
 					</div>
 				</div>
 			</c:forEach>

@@ -37,6 +37,35 @@ footer {
 	background-color: #f2f2f2;
 	padding: 25px;
 }
+
+.green_window {
+	display: inline-block;
+	width: 366px; height: 50px;
+	border: 3px solid #FF9933;
+	background: white;
+}
+.input_text {
+	width: 149px; height: 40px;
+	margin: 3px 0 0 9px;
+	border: 0;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+	outline: none;
+}
+.sch_smit {
+	width: 54px; height: 50px;
+	margin: 0; border: 0;
+	vertical-align: top;
+	background: #FF9933;
+	color: white;
+	font-weight: bold;
+	border-radius: 1px;
+	cursor: pointer;
+}
+.sch_smit:hover {
+	background: #FF9933;
+}
 </style>
 <script type="text/javascript" src='<c:url value="/resource/js/member.js"/>'></script>
 </head>
@@ -46,16 +75,17 @@ footer {
         
 	
 	<form action="idCheck.do" method="get" name="frm">
-	아이디 <input type="text" name= "userid" class="form-control" value="${userid}"> <input
-			type="submit" class="btn btn-warning" value="중복체크" align="center"> <br>
-		<c:if test="${result ==1 }">
+	
+	<b>아이디</b> <input type="text" class="input_text" name="userid"  value="${userid}" > 
+	<input 	type="submit" class="btn btn-warning" value="중복체크" class="sch_smit"  align="center" > <br>
+		    <c:if test="${result ==1 }">
 			<script type="text/javascript">
 				opener.document.frm.userid.value = "";
 			</script>
-           \n\n ${userid}는 이미 사용 중인 아이디 입니다.
+           ${userid}는 이미 사용 중인 아이디 입니다.
         </c:if>
 		<c:if test="${result ==-1 }">
-        ${userid }는 사용 가능한 아이디입니다.
+        ${userid}는 사용 가능한 아이디입니다.
 <input type="button" value="사용" class="btn btn-info"  onclick="idok()">
 		</c:if>
 	</form>

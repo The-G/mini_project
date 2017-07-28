@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <Resource auth="Container"
-  	driverClassName="net.sf.log4jdbc.DriverSpy"
-  	maxTotal="10"
-  	maxWaitMillis="-1"
-  	name="jdbc/mydbcp"
-  	password="bigdata"
-  	username="bigdata"
-  	type="javax.sql.DataSource"
-  	url="jdbc:log4jdbc:oracle:thin:@70.12.50.62:1521:xe"
-  	/>
+<Resource url="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe" type="javax.sql.DataSource" username="bigdata" password="bigdata" name="jdbc/mydbcp" maxWaitMillis="-1" maxTotal="10" driverClassName="net.sf.log4jdbc.DriverSpy" auth="Container"/>
 </Context>
 <!-- connection pool 방식 때 이 파일이 필요하다!!-->
 <!-- mini / mini0 db도 있음.. -->
