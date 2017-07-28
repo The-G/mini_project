@@ -92,7 +92,7 @@ footer {
 </head>
 <body>
 	<div class="container text-center">
-		<img src="${context}/resource/img/title.png"><br>
+		<a href="main"><img src="${context}/resource/img/title.png"><br></a>
 	</div>
 	<nav class="navbar navbar-inverse"
 		style="margin-bottom: 0; padding-bottom: 0;">
@@ -132,6 +132,12 @@ footer {
 
 	<header>
 	<br>
+	<c:if test="${empty loginUser}">
+					<span class="green_window">
+						<input class="input_text" name="movie_name" style="color: black"
+							placeholder="로그인후 검색가능합니다."  required="required"> </span>
+							<input	type="button" class="sch_smit" value="검색">
+							</c:if>
 		<c:if test="${not empty loginUser}">
 					<form action="searchAction" method="post">
                      <span class="green_window">

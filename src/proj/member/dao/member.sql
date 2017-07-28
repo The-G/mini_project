@@ -23,5 +23,8 @@ CREATE TABLE member
 	PRIMARY KEY (userid)
 );
 
+INSERT INTO MEMBER
+VALUES (test, test, test, test, test, 12343, test, 1, 1, 1);
+
 
 

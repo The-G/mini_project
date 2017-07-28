@@ -43,7 +43,7 @@ footer {
 <body>
 
 	<div class="container text-center">
-		<img src= "${context}/resource/img/title.png">
+	<a href="proj/main"><img src= "${context}/resource/img/title.png"></a>
 		
 	</div>
 	<nav class="navbar navbar-inverse">
@@ -54,11 +54,11 @@ footer {
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main">Home</a>
+			<a class="navbar-brand" href="proj/main">Home</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-					<a class="navbar-brand" href="main">MoiveChart</a>
+					<a class="navbar-brand" href="proj/main">MoiveChart</a>
 			
 				</ul>
 			<ul class="nav navbar-nav navbar-right">

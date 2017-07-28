@@ -20,10 +20,13 @@ public class ProjDrawPlot extends AbstractController {
 	
 	@Override
 	public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) {
+			
+				
 		ModelAndView mav = new ModelAndView();
 		WebElement temp_list;
 		
 		String name = request.getParameter("name");
+		String release_date = request.getParameter("release_date");
 
 		System.setProperty(
                 "webdriver.chrome.driver",
@@ -33,6 +36,12 @@ public class ProjDrawPlot extends AbstractController {
 		
 		driver.findElement(By.name("sMovName")).sendKeys(name);
 		driver.findElement(By.xpath("//*[@id='searchMainTopMovie']/table/tbody/tr/td[2]/img")).click();
+		driver.findElement(By.xpath("//*[@title='시작일자']")).sendKeys(release_date.substring(0,5));
+		driver.findElement(By.xpath("//*[@title='종료일자']")).sendKeys(release_date.substring(0,5));
+		driver.findElement(By.xpath("//*[@id='content']/form[1]/fieldset/section/p/button[1]")).click();
+		
+		
+		
 		
 		driver.findElement(By.xpath("//*[@id='content']/table/tbody/tr[1]/td[1]/a")).click();
 		driver.findElement(By.xpath("/html/body/div[5]/div[1]/section/div/ul/li[2]/a")).click();
@@ -71,22 +80,14 @@ public class ProjDrawPlot extends AbstractController {
 		mav.addObject("i", Arrays.asList(data_list.get(10)).get(4).replace(",", ""));
 		mav.addObject("j", Arrays.asList(data_list.get(11)).get(4).replace(",", ""));
 		
-		
-//		System.out.println();
-//		System.out.println(Arrays.asList(data_list.get(3)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(4)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(5)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(6)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(7)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(8)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(9)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(10)).get(4));
-//		System.out.println(Arrays.asList(data_list.get(11)).get(4));
+		mav.addObject("movie_name", name);
 		
 		mav.setViewName("/WEB-INF/views/proj/draw_plot.jsp");
 		
 		
 		return mav;
+		
+		
 	}
 	
 

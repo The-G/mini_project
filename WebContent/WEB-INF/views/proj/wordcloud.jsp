@@ -29,7 +29,7 @@
 <body>
 
 	<div class="container text-center">
-		<img src="../resource/img/title.png"><br>
+<a href="main">	<img src="../resource/img/title.png"><br></a>
 
 
 	</div>
