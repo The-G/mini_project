@@ -303,10 +303,6 @@ public class MovieDAOImpl implements MovieDAO {
 			append_text = append_text.concat(list.get(i).getContent());
 			append_text = append_text.concat(System.lineSeparator());
 		}
-
-		// System.out.println(append_text);
-		// HashMap<String, Integer> count = new HashMap<String, Integer>();
-
 		HashMap<String, Integer> count = new HashMap<String, Integer>();
 
 		// TODO:: FIRST!!! json으로 hash 대신에... 해서 json 통으로 넘기자!!!
@@ -317,6 +313,7 @@ public class MovieDAOImpl implements MovieDAO {
 
 		while (scan.hasNext()) {
 			String word = removePunctuations(scan.next());
+//			System.out.println(word);
 			if (filter.contains(word)) continue;
 			if (word.equals(""))
 				continue;
@@ -326,12 +323,16 @@ public class MovieDAOImpl implements MovieDAO {
 			// 형태로 집어넣어야 한다!!
 			count.put(word, (n == null) ? 1 : n + 1);
 		}
-
+//		System.out.println(count);
+//		if(true){
+//			return null;
+//		}
+		
 		List<JSONObject> jsonObj = new ArrayList<JSONObject>();
 		for (int i = 0; i < count.size(); i++) {
 			JSONObject result = new JSONObject();
 			try {
-				if ((Integer) count.values().toArray()[i] >= 5) {
+				if ((Integer) count.values().toArray()[i] >= 3) {
 					result.put("size", count.values().toArray()[i]);
 					result.put("text", count.keySet().toArray()[i]);
 				} else {
