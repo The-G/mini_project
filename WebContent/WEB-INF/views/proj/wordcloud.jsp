@@ -28,7 +28,7 @@
 </head>
 <body>
 	<div class="container text-center">
-		<img src="../resource/img/title.png"><br>
+<a href="main">	<img src="../resource/img/title.png"><br></a>
 
 
 	</div>
@@ -78,6 +78,7 @@
 			<div class="col-md-12 col-sm-12 col-xs-12" align="center">
 				<div id="word-cloud"></div>
 			</div>
+			
 			<!-- some comments -->
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<table class="table">
