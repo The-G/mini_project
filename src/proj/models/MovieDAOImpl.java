@@ -332,7 +332,7 @@ public class MovieDAOImpl implements MovieDAO {
 		for (int i = 0; i < count.size(); i++) {
 			JSONObject result = new JSONObject();
 			try {
-				if ((Integer) count.values().toArray()[i] >= 3) {
+				if ((Integer) count.values().toArray()[i] >= 5) {
 					result.put("size", count.values().toArray()[i]);
 					result.put("text", count.keySet().toArray()[i]);
 				} else {
