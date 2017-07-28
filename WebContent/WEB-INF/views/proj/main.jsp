@@ -119,11 +119,11 @@ footer {
 
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="drawplot"><font color="f2f516"
-							class="glyphicon glyphicon-user">우창 페이지</font></a></li>
-					<li><a href="testAction"><span
-							class="glyphicon glyphicon-user" class="glyphicon glyphicon-user"></span>
-							test</font></a></li>
+<!-- 					<li><a href="drawplot"><font color="f2f516" -->
+<!-- 							class="glyphicon glyphicon-user">우창 페이지</font></a></li> -->
+<!-- 					<li><a href="testAction"><span -->
+<!-- 							class="glyphicon glyphicon-user" class="glyphicon glyphicon-user"></span> -->
+<!-- 							test</font></a></li> -->
 					<c:if test="${empty loginUser}">
 						<li><a href="${context}/login.do"><span
 								class="glyphicon glyphicon-user"></span> Login</a></li>
