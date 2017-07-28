@@ -18,10 +18,13 @@ public class ProjCrawlingCommentAction extends AbstractController {
 	public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) {
 		Long crawling_id = Long.parseLong(request.getParameter("crawling_id"));
 		Long movie_id = Long.parseLong(request.getParameter("movie_id"));
+		String name = request.getParameter("movie_name");
+		
 		
 		MovieCommentVO movieCommentVO = new MovieCommentVO();
 		movieCommentVO.setMovie_id(movie_id);
 		movieCommentVO.setCrawling_id(crawling_id);
+		
 		
 		MovieDAO movieDAO = MovieDAOImpl.getInstance();
 		ModelAndView mav = new ModelAndView("/WEB-INF/views/result.jsp");
@@ -35,7 +38,7 @@ public class ProjCrawlingCommentAction extends AbstractController {
 			
 			List<MovieCommentVO> list = movieDAO.getMovieCommentList(movieCommentVO);
 			JSONArray count_word = movieDAO.countWord(list); 
-			HashMap<String, Integer> count_word2 = movieDAO.countWord2(list); 
+			JSONArray count_word2 = movieDAO.countWord2(list); 
 		    
 
 			
@@ -46,7 +49,7 @@ public class ProjCrawlingCommentAction extends AbstractController {
 			mav.addObject("list", list);
 			mav.addObject("count_word", count_word);
 			mav.addObject("count_word2", count_word2);
-
+			mav.addObject("movie_name", name);
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", e.getMessage());

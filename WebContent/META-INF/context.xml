@@ -8,7 +8,7 @@
   	password="bigdata"
   	username="bigdata"
   	type="javax.sql.DataSource"
-  	url="jdbc:log4jdbc:oracle:thin:@70.12.50.62:1521:xe"
+  	url="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"
   	/>
 </Context>
 <!-- connection pool 방식 때 이 파일이 필요하다!!-->

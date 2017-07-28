@@ -25,7 +25,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		
 		MemberVO mVo = mDao.getMember(userid);
 		request.setAttribute("mVo", mVo);
-        
+        	
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/member/memberUpdate.jsp");
 		dispatcher.forward(request, response);
 		
@@ -58,7 +58,10 @@ public class MemberUpdateServlet extends HttpServlet {
 		mVo.setReceiveSns(Integer.parseInt(receiveSns));
 		MemberDAO mDao = MemberDAO.getInstance();
 		mDao.updateMember(mVo);
-		response.sendRedirect("login.do");
+		
+		response.sendRedirect("proj/main");
+
+//		response.sendRedirect("login.do");
 
 	}
 

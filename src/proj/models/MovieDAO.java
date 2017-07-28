@@ -19,6 +19,6 @@ public interface MovieDAO {
 
 	JSONArray countWord(List<MovieCommentVO> list);
 
-	HashMap<String, Integer> countWord2(List<MovieCommentVO> list);
+	JSONArray countWord2(List<MovieCommentVO> list);
 
 }

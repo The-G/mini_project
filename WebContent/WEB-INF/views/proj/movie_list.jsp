@@ -97,7 +97,6 @@ footer {
 	</nav>
 	<article class="container">
         <div class="page-header">
-          <h1> Serched Moives <br><small> <c:forEach items="${list}" var="vo">${vo.name},</c:forEach> </small></h1>
           <br>  
           <form action="searchAction" method="post">
                      <center>
@@ -124,22 +123,15 @@ footer {
 								dateStyle="short" timeStyle="short" />
 							<form action="crawlingCommentAction" method="post">
 								<input type="hidden" name="movie_id" value="${vo.movie_id}" />
-<<<<<<< HEAD
-								<input type="hidden" name="crawling_id" 
-									value="${vo.crawling_daum_id}" /><br> <input
-									type="submit" value="Make WordCloud" class="btn btn-info"/>
-							</div>
-
-=======
+								<input type="hidden" name="movie_name" value="${vo.name}" />
 								<input type="hidden" name="crawling_id"
 									value="${vo.crawling_daum_id}" /><br> 
-								<input type="submit" value="Make WordCloud" />
+								<input type="submit" value="Make WordCloud" class="btn btn-info" />
 							</form>
 							<form action="drawplot" method="post">
 								<input type="hidden" name="name" value="${vo.name}" />
-								<input type="submit" value="Plot" />
+								<input type="submit" value="Plot" class="btn btn-info" />
 							</form>
->>>>>>> 5cc55430cc819706fbd0d1098c97beeb227c519f
 						</div>
 
 					</div>

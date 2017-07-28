@@ -27,6 +27,7 @@
 
 </head>
 <body>
+
 	<div class="container text-center">
 		<img src="../resource/img/title.png"><br>
 
@@ -58,7 +59,6 @@
 						<li><a href="${context}/mypage.do"><span
 								class="glyphicon glyphicon-user"></span> Mypage</a></li>
 					</c:if>
-
 				</ul>
 			</div>
 		</div>
@@ -66,7 +66,7 @@
 	<article class="container">
 		<div class="page-header">
 			<h1>
-				WORDCLOUD FOR<small> </small>
+				WORDCLOUD FOR<small> ${movie_name} </small>
 			</h1>
 		</div>
 	</article>
@@ -117,11 +117,11 @@
 	
 	var color = d3.scale.linear().domain(
 			[ 0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100 ]).range(
-			[ "#21618C", "#2874A6", "#2E86C1", "#3498DB", "#5DADE2", "#85C1E9",
-					"#AED6F1", "#AED6F1", "#AED6F1", "#AED6F1", "#AED6F1",
-					"#AED6F1" ]);
+			[ "#154360", "#1B4F72", "#1A5276", "#21618C", "#1F618D", "#2874A6",
+					"#2471A3", "#2E86C1", "#2980B9", "#3498DB", "#5499C7",
+					"#5DADE2" ]);
 
-	d3.layout.cloud().size([ 800, 350 ]).words(frequency_list).rotate(0)
+	d3.layout.cloud().size([ 800, 1000 ]).words(frequency_list).rotate(0)
 			.fontSize(function(d) {
 				return d.size;
 			}).on("end", draw).start();
@@ -133,7 +133,7 @@
 		// appear outside of the SVG area
 		.attr("transform", "translate(320,300)").selectAll("text").data(words)
 				.enter().append("text").style("font-size", function(d) {
-					return d.size + 10 + "px";
+					return d.size + 15 + "px";
 				}).style("fill", function(d, i) {
 					return color(i);
 				}).attr(
@@ -147,61 +147,42 @@
 	}
 </script>
 
-
-	<script type="text/javascript">
+<script>
+	var result = '${count_word2}';
+	// 	console.log("first : " + typeof result);
+	var json_result = JSON.parse(result);
+	// 	console.log("second : " + json_result);
+	var frequency_list = json_result;
 	
-		var fill = d3.scale.category20();
-		//
-		var result = '${count_word2}';
-		//
+	var color = d3.scale.linear().domain(
+			[ 0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100 ]).range(
+			[ "#4A235A", "#512E5F", "#5B2C6F", "#633974", "#6C3483", "#76448A",
+					"#7D3C98", "#884EA0", "#8E44AD", "#9B59B6", "#A569BD",
+					"#AF7AC5" ]);
 
-		var width = 800;
-		var height = 300;
-		for (var i = 0; i < words.length; i++) {
-			/* words[i].size = 10 + Math.random() * 90;*/
-			words[i].size = 10 + result[words[i]];
-		}
-	
-		d3.layout.cloud()
-			.size([ width, height ])
-			.words(words)
-			.padding(5)
-			.rotate(function() {
-				return ~~(Math.random() * 2) * 90;
-			})
-			.font("Impact")
+	d3.layout.cloud().size([ 800, 1000 ]).words(frequency_list).rotate(0)
 			.fontSize(function(d) {
 				return d.size;
-			})
-			.on("end", draw)
-			.start();
-	
-		function draw(words) {
-			d3.select("#word-cloud2")
-				.append("svg")
-				.attr("width", width)
-				.attr("height", height)
-				.append("g")
-				.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-				.selectAll("text")
-				.data(words)
-				.enter()
-				.append("text")
-				.style("font-size", function(d) {
-					return d.size + "px";
-				})
-				.style("font-family", "Impact")
-				.style("fill", function(d, i) {
-					return fill(i);
-				})
-				.attr("text-anchor", "middle")
-				.attr("transform", function(d) {
-					return "translate(" + [ d.x, d.y ] + ")rotate(" + d.rotate + ")";
-				})
-				.text(function(d) {
-					return d.text;
-				})
-		}
-	</script>
+			}).on("end", draw).start();
 
+	function draw(words) {
+		d3.select("#word-cloud2").append("svg").attr("width", 850).attr(
+				"height", 550).attr("class", "wordcloud").append("g")
+		// without the transform, words words would get cutoff to the left and top, they would
+		// appear outside of the SVG area
+		.attr("transform", "translate(320,300)").selectAll("text").data(words)
+				.enter().append("text").style("font-size", function(d) {
+					return d.size + 15 + "px";
+				}).style("fill", function(d, i) {
+					return color(i);
+				}).attr(
+						"transform",
+						function(d) {
+							return "translate(" + [ d.x, d.y ] + ")rotate("
+									+ d.rotate + ")";
+						}).text(function(d) {
+					return d.text;
+				});
+	}
+</script>
 </html>
